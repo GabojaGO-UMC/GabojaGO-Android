@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#FF654E"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/login_background_iv"
+        android:layout_width="match_parent"
+        android:layout_height="490dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/login_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/login_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+       android:textSize="18sp"
+        android:textColor="#000000"
+        android:fontFamily="@font/apple_sd_gothic_neo_r"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_background_iv"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/login_title_02_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그인 후 서비스를 이용하실 수 있습니다."
+        android:textSize="13sp"
+        android:textColor="#000000"
+        android:fontFamily="@font/apple_sd_gothic_neo_r"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_title_tv"
+        />
+
+
+    <com.nhn.android.naverlogin.ui.view.OAuthLoginButton
+        android:id="@+id/login_naver_btn"
+        android:layout_width="290dp"
+        android:layout_height="57.6dp"
+        app:layout_constraintTop_toBottomOf="@id/login_title_02_tv"
+        app:layout_constraintBottom_toTopOf="@id/login_info_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        />
+
+    <CheckBox
+        android:id="@+id/login_cb"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_margin="16dp"
+        android:button="@null"
+        android:background="@drawable/login_checkbox"
+        app:layout_constraintStart_toStartOf="@id/login_naver_btn"
+        app:layout_constraintTop_toBottomOf="@id/login_naver_btn"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/login_remain_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그인 유지"
+        android:textSize="13sp"
+        android:textColor="#000000"
+        android:fontFamily="@font/apple_sd_gothic_neo_r"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/login_cb"
+        app:layout_constraintTop_toTopOf="@id/login_cb"
+        app:layout_constraintBottom_toBottomOf="@id/login_cb"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/login_info_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="&#169; Gabojago"
+        android:textSize="10sp"
+        android:textColor="#000000"
+        android:fontFamily="@font/apple_sd_gothic_neo_r"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="8dp"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/folder_record_result_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/folderresultbox"
+    android:layout_marginTop="10dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+        android:id="@+id/folder_record_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23sp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        android:text="제목을 정해줘!"
+        android:background="@color/transparent"
+        android:textColor="#9BA8BB"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/folder_record_pecil_iv"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/memo_pencil_bluegray"
+        app:layout_constraintBottom_toBottomOf="@id/folder_record_title_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/folder_record_title_tv" />
+
+    <ImageView
+        android:id="@+id/folder_record_folder_iv"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:layout_marginEnd="18dp"
+        android:src="@drawable/folder_gray"
+        app:layout_constraintBottom_toBottomOf="@id/folder_record_title_tv"
+        app:layout_constraintEnd_toStartOf="@id/folder_record_pecil_iv"
+        app:layout_constraintTop_toTopOf="@id/folder_record_title_tv" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/item_record_result_recyclerview"
+        tools:listitem="@layout/item_record_folder"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/folder_record_title_tv" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

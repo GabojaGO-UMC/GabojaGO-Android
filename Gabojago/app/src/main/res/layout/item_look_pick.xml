@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="32dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/result_pick_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="15:34"
+        android:textColor="#797979"
+        android:textSize="12sp"
+        android:fontFamily="@font/apple_sd_gothic_neo_r"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/result_pick_type_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="돌려돌려 돌림판"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:fontFamily="@font/apple_sd_gothic_neo_r"
+        app:layout_constraintStart_toEndOf="@id/result_pick_time_tv"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/result_pick_quot_01_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:text="&quot;"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:fontFamily="@font/apple_sd_gothic_neo_r"
+        app:layout_constraintStart_toEndOf="@id/result_pick_type_tv"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/result_pick_contents_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="횡단보도"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:fontFamily="@font/apple_sd_gothic_neo_r"
+        app:layout_constraintStart_toEndOf="@id/result_pick_quot_01_tv"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/result_pick_quot_02_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="&quot;"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:fontFamily="@font/apple_sd_gothic_neo_r"
+        app:layout_constraintStart_toEndOf="@id/result_pick_contents_tv"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

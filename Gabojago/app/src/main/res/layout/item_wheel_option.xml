@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="48dp">
+
+    <EditText
+        android:id="@+id/item_record_name_et"
+        android:layout_width="261dp"
+        android:layout_height="33dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:textSize="14sp"
+        android:background="@drawable/item_box"
+        android:inputType="textPersonName"
+        android:layout_marginStart="17dp"
+        android:text="Sample EditText"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <View
+        android:id="@+id/item_record_minus"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/option_minus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.84"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X"
+        android:textSize="16sp"
+        android:fontFamily="@font/apple_sd_gothic_neo_r"
+        android:textColor="#ffffff"
+        android:backgroundTint="@null"
+        app:layout_constraintStart_toStartOf="@id/item_record_minus"
+        app:layout_constraintEnd_toEndOf="@id/item_record_minus"
+        app:layout_constraintTop_toTopOf="@id/item_record_minus"
+        app:layout_constraintBottom_toBottomOf="@id/item_record_minus"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

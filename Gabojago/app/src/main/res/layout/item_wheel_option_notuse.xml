@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/item_record_name_et"
+        android:layout_width="136dp"
+        android:layout_height="33dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:textSize="14sp"
+        android:background="@drawable/item_box"
+        android:inputType="textPersonName"
+        android:layout_marginStart="17dp"
+        android:text="Sample EditText"
+        android:fontFamily="@font/nanum_square_round_otf_extrabold"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <View
+        android:id="@+id/item_record_minus"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        app:layout_constraintEnd_toEndOf="@id/item_record_name_et"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/option_minus"
+        />
+
+    <View
+        android:layout_width="9dp"
+        android:layout_height="1.5dp"
+        app:layout_constraintStart_toStartOf="@id/item_record_minus"
+        app:layout_constraintEnd_toEndOf="@id/item_record_minus"
+        app:layout_constraintTop_toTopOf="@id/item_record_minus"
+        app:layout_constraintBottom_toBottomOf="@id/item_record_minus"
+        android:background="#ffffff"
+        />
+
+    <TextView
+        android:id="@+id/item_record_size_tv"
+        android:layout_width="49dp"
+        android:layout_height="33dp"
+        android:textSize="14sp"
+        android:background="@drawable/item_box"
+        android:textColor="@color/black"
+        android:text="1"
+        android:gravity="center"
+        android:fontFamily="@font/nanum_square_round_otf_extrabold"
+        android:layout_margin="5dp"
+        app:layout_constraintStart_toEndOf="@id/item_record_name_et"
+        app:layout_constraintEnd_toStartOf="@id/item_record_prob_tv"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.7"
+        />
+
+    <TextView
+        android:id="@+id/item_record_prob_tv"
+        android:layout_width="49dp"
+        android:layout_height="33dp"
+        android:textSize="14sp"
+        android:background="@drawable/item_box_02"
+        android:elevation="5dp"
+        android:textColor="@color/black"
+        android:text="50"
+        android:layout_marginEnd="17dp"
+        android:fontFamily="@font/nanum_square_round_otf_extrabold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#00000000"
+    android:backgroundTint="#00000000">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dialog_select_recyclerview"
+        android:layout_width="350dp"
+        android:layout_height="400dp"
+        android:orientation="vertical"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/dialog_next_btn"
+        tools:listitem="@layout/item_record_result" />
+
+    <ImageView
+        android:id="@+id/dialog_next_btn"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/next_btn"
+        app:layout_constraintTop_toBottomOf="@id/dialog_select_recyclerview"
+        app:layout_constraintEnd_toEndOf="@id/dialog_select_recyclerview"
+        app:layout_constraintStart_toStartOf="@id/dialog_select_recyclerview"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:text="다음"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        app:layout_constraintEnd_toEndOf="@id/dialog_next_btn"
+        app:layout_constraintStart_toStartOf="@id/dialog_next_btn"
+        app:layout_constraintTop_toTopOf="@id/dialog_next_btn"
+        app:layout_constraintBottom_toBottomOf="@id/dialog_next_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

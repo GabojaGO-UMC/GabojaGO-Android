@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:id="@+id/number_background_iv"
+        android:layout_width="match_parent"
+        android:layout_height="530dp"
+        android:background="@drawable/option_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/number_option_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#23354F"
+        android:text="옵션 설정하기"
+        android:layout_marginTop="35dp"
+        app:layout_constraintTop_toTopOf="@id/number_background_iv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/number_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="숫자의 범위와 개수를 정해줘!"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        android:textStyle="normal"
+        android:textSize="14sp"
+        android:textColor="#a9a9a9"
+        app:layout_constraintStart_toStartOf="@id/number_background_iv"
+        app:layout_constraintEnd_toEndOf="@id/number_background_iv"
+        app:layout_constraintTop_toBottomOf="@id/number_option_tv"
+        />
+
+    <TextView
+        android:id="@+id/number_range_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="숫자 범위"
+        android:textSize="18sp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        app:layout_constraintStart_toStartOf="@id/number_background_iv"
+        app:layout_constraintEnd_toEndOf="@id/number_background_iv"
+        app:layout_constraintTop_toBottomOf="@id/number_name_tv"
+        app:layout_constraintHorizontal_bias="0.5"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/number_start_tv"
+        android:inputType="number"
+        android:digits="0123456789"
+        android:maxLength="6"
+        android:layout_width="110dp"
+        android:layout_height="47dp"
+        android:textSize="27sp"
+        android:text="0"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        android:background="@drawable/item_box"
+        android:gravity="center"
+        android:layout_marginEnd="13dp"
+        app:layout_constraintEnd_toStartOf="@id/number_range_middle_tv"
+        app:layout_constraintTop_toTopOf="@id/number_range_middle_tv"
+        app:layout_constraintBottom_toBottomOf="@id/number_range_middle_tv"
+        />
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/number_range_middle_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="~"
+        android:textSize="36sp"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/number_range_tv"
+        app:layout_constraintHorizontal_bias="0.5"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/number_end_tv"
+        android:inputType="number"
+        android:digits="0123456789"
+        android:maxLength="6"
+        android:layout_width="110dp"
+        android:layout_height="47dp"
+        android:text="999999"
+        android:textStyle="bold"
+        android:textSize="27sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        android:background="@drawable/item_box"
+        android:gravity="center"
+        android:layout_marginStart="13dp"
+        app:layout_constraintStart_toEndOf="@id/number_range_middle_tv"
+        app:layout_constraintTop_toTopOf="@id/number_range_middle_tv"
+        app:layout_constraintBottom_toBottomOf="@id/number_range_middle_tv"
+        />
+
+    <TextView
+        android:id="@+id/number_num_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="숫자 개수"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        app:layout_constraintStart_toStartOf="@id/number_background_iv"
+        app:layout_constraintEnd_toEndOf="@id/number_background_iv"
+        app:layout_constraintTop_toBottomOf="@id/number_start_tv"
+        app:layout_constraintHorizontal_bias="0.5"
+        />
+
+    <TextView
+        android:id="@+id/number_number_tv"
+        android:layout_width="193dp"
+        android:layout_height="47dp"
+        android:textSize="27sp"
+        android:text="0"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        android:background="@drawable/item_box"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/number_background_iv"
+        app:layout_constraintEnd_toEndOf="@id/number_background_iv"
+        app:layout_constraintTop_toBottomOf="@id/number_num_tv"
+        />
+
+    <CheckBox
+        android:id="@+id/number_option_cb"
+        android:layout_width="73dp"
+        android:layout_height="20dp"
+
+        android:button="@null"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/number_checkbox"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        app:layout_constraintStart_toStartOf="@id/number_background_iv"
+        app:layout_constraintEnd_toEndOf="@id/number_background_iv"
+        app:layout_constraintTop_toBottomOf="@id/number_number_tv"
+        />
+
+    <ImageView
+        android:id="@+id/number_comp_btn"
+        android:layout_width="290dp"
+        android:layout_height="70dp"
+        android:src="@drawable/option_complete"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+        android:gravity="center_horizontal"
+        android:text="완료"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/number_comp_btn"
+        app:layout_constraintBottom_toBottomOf="@id/number_comp_btn"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

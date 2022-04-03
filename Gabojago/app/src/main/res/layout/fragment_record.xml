@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/record_constraintlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/record_pecil_big_iv"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="60dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/memo_pencil_orange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/record_Title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        android:text="기록하자"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="32.3sp"
+        app:layout_constraintBottom_toBottomOf="@id/record_pecil_big_iv"
+        app:layout_constraintStart_toEndOf="@id/record_pecil_big_iv"
+        app:layout_constraintTop_toTopOf="@id/record_pecil_big_iv" />
+
+    <TextView
+        android:id="@+id/record_month_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="120dp"
+        android:fontFamily="@font/apple_sd_gothic_neo_r"
+        android:letterSpacing="-0.03"
+        android:text="&lt; 12월"
+        android:textColor="#777777"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/record_date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/apple_sd_gothic_neo_r"
+        android:letterSpacing="-0.06"
+        android:text="2021년 12월 28일 "
+        android:textColor="#6d6d6d"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/record_month_tv"
+        app:layout_constraintEnd_toEndOf="@id/record_calender_view1" />
+
+    <View
+        android:id="@+id/record_calender_view1"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="15dp"
+        android:background="#ff6745"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/record_date_tv"
+        app:layout_constraintBottom_toTopOf="@id/record_week_recyclerview"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/record_week_recyclerview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="@id/record_calender_view1"
+        app:layout_constraintStart_toStartOf="@id/record_calender_view1"
+        app:layout_constraintTop_toBottomOf="@id/record_calender_view1"
+        app:layout_constraintBottom_toTopOf="@id/record_calender_view2"
+        tools:listitem="@layout/item_record_week" />
+
+    <View
+        android:id="@+id/record_calender_view2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="17dp"
+        android:background="#ff6745"
+        app:layout_constraintEnd_toEndOf="@id/record_calender_view1"
+        app:layout_constraintStart_toStartOf="@id/record_calender_view1"
+        app:layout_constraintTop_toBottomOf="@id/record_week_recyclerview"
+        app:layout_constraintBottom_toTopOf="@id/record_count_tv"/>
+
+    <TextView
+        android:id="@+id/record_count_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        android:gravity="center"
+        android:text="5"
+        android:textColor="#ff6745"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/record_calender_view2" />
+
+    <TextView
+        android:id="@+id/record_totalcount_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="1dp"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        android:gravity="center"
+        android:text="/30"
+        android:textColor="#797979"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/record_count_tv"
+        app:layout_constraintTop_toTopOf="@id/record_count_tv" />
+
+    <TextView
+        android:id="@+id/record_notify_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        android:gravity="bottom|center"
+        android:text="기록은 최대30개까지 가능해!"
+        android:textColor="#80777777"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/record_nestedscrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/record_calender_view2"
+        app:layout_constraintStart_toStartOf="@id/record_calender_view2"
+        app:layout_constraintTop_toBottomOf="@id/record_count_tv">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/record_folderresult_recyclerview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:orientation="vertical"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toTopOf="@id/record_division_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/item_record_foldername" />
+
+            <View
+                android:id="@+id/record_division_view"
+                android:layout_width="0dp"
+                android:layout_height="1.3dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#D5D5D5"
+                app:layout_constraintBottom_toTopOf="@id/record_result_recyclerview"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/record_folderresult_recyclerview" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/record_result_recyclerview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@id/record_nothing_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/record_division_view"
+                tools:listitem="@layout/item_record_result" />
+
+            <View
+                android:id="@+id/record_nothing_view"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:fontFamily="@font/apple_sd_gothic_neo_sb"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/record_result_recyclerview" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <com.github.mmin18.widget.RealtimeBlurView
+        android:id="@+id/record_blur_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationZ="3dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:realtimeBlurRadius="10dp"
+        app:realtimeOverlayColor="#00000000" />
+
+
+    <ImageView
+        android:id="@+id/record_more_iv"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="7dp"
+        android:src="@drawable/menu"
+        android:translationZ="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/record_close_iv"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="7dp"
+        android:src="@drawable/x"
+        android:translationZ="10dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/record_trash_iv"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="7dp"
+        android:src="@drawable/trash"
+        android:translationZ="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/record_folderplus_iv"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="7dp"
+        android:src="@drawable/folder_plus"
+        android:translationZ="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

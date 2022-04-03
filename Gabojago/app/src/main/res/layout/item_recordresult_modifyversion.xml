@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/item_modify_rectangle_iv"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/rectangle_orange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/item_modify_circle_iv"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:src="@drawable/resultimage_dolimpan_orange"
+        android:layout_marginStart="17dp"
+        android:layout_marginBottom="8.5dp"
+        app:layout_constraintStart_toStartOf="@id/item_modify_rectangle_iv"
+        app:layout_constraintTop_toTopOf="@id/item_modify_rectangle_iv"
+        app:layout_constraintBottom_toBottomOf="@id/item_modify_rectangle_iv"/>
+
+    <ImageView
+        android:id="@+id/item_modify_title_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="13dp"
+        android:src="@drawable/dolimpan"
+        android:scaleType="fitStart"
+        android:layout_marginStart="11dp"
+        app:layout_constraintStart_toEndOf="@id/item_modify_circle_iv"
+        app:layout_constraintTop_toTopOf="@id/item_modify_circle_iv"
+        app:layout_constraintBottom_toTopOf="@id/item_modify_result_tv"/>
+
+    <TextView
+        android:id="@+id/item_modify_result_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        android:textSize="16sp"
+        android:layout_marginTop="3dp"
+        android:textColor="#000000"
+        android:text="버스"
+        app:layout_constraintStart_toStartOf="@id/item_modify_title_iv"
+        app:layout_constraintTop_toBottomOf="@id/item_modify_title_iv"
+        app:layout_constraintBottom_toBottomOf="@id/item_modify_circle_iv"/>
+
+
+    <ImageView
+        android:id="@+id/item_modify_pecil_iv"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/folder_plus2"
+        app:layout_constraintBottom_toBottomOf="@id/item_modify_circle_iv"
+        app:layout_constraintEnd_toEndOf="@id/item_modify_rectangle_iv"
+        app:layout_constraintTop_toTopOf="@id/item_modify_circle_iv" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

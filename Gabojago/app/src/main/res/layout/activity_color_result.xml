@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/color_result_question_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/color_result_question_btn"
+                android:layout_width="148.24dp"
+                android:layout_height="217.18dp"
+                android:background="@drawable/color_question_box"
+                android:elevation="10dp"
+                android:fontFamily="@font/apple_sd_gothic_neo_sb"
+                android:text=" &#63; "
+                android:textSize="72sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/color_result_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            >
+
+            <TextView
+                android:id="@+id/color_result_color_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:text="결과 색깔"
+                android:textSize="36sp"
+                android:shadowRadius="20.0"
+                android:shadowDx="7.0"
+                android:shadowDy="7.0"
+                android:shadowColor="#ffffff"
+                android:layout_marginBottom="13dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:elevation="10dp"
+                android:fontFamily="@font/apple_sd_gothic_neo_sb"
+                app:layout_constraintBottom_toTopOf="@id/color_result_color_iv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+
+            <ImageView
+                android:id="@+id/color_result_color_iv"
+                android:layout_width="211dp"
+                android:layout_height="211dp"
+                android:src="@drawable/color_black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/color_result_retry_btn"
+                android:layout_width="135dp"
+                android:layout_height="45dp"
+                android:src="@drawable/rectangle_4"
+                android:layout_marginTop="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/color_result_save_btn"
+                app:layout_constraintTop_toBottomOf="@id/color_result_color_iv"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/apple_sd_gothic_neo_sb"
+                android:textStyle="normal"
+                android:textSize="18sp"
+                android:textColor="#23354F"
+                android:text="다시 뽑기"
+                app:layout_constraintStart_toStartOf="@id/color_result_retry_btn"
+                app:layout_constraintEnd_toEndOf="@id/color_result_retry_btn"
+                app:layout_constraintTop_toTopOf="@id/color_result_retry_btn"
+                app:layout_constraintBottom_toBottomOf="@id/color_result_retry_btn"/>
+
+            <ImageView
+                android:id="@+id/color_result_save_btn"
+                android:layout_width="135dp"
+                android:layout_height="45dp"
+                android:src="@drawable/rectangle_6"
+                android:layout_marginTop="50dp"
+                app:layout_constraintStart_toEndOf="@id/color_result_retry_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/color_result_color_iv"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/apple_sd_gothic_neo_sb"
+                android:textStyle="normal"
+                android:textSize="18sp"
+                android:textColor="#ffffff"
+                android:text="결과 저장"
+                app:layout_constraintStart_toStartOf="@id/color_result_save_btn"
+                app:layout_constraintEnd_toEndOf="@id/color_result_save_btn"
+                app:layout_constraintTop_toTopOf="@id/color_result_save_btn"
+                app:layout_constraintBottom_toBottomOf="@id/color_result_save_btn"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/color_loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        >
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/color_loading_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="저장 중"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:fontFamily="@font/apple_sd_gothic_neo_sb"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/color_loading_iv"
+            android:layout_width="39dp"
+            android:layout_height="11dp"
+            android:src="@drawable/loading_01"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/color_loading_tv"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

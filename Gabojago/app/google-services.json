@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "816868276907",
+    "project_id": "gabojago-54fc6",
+    "storage_bucket": "gabojago-54fc6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:816868276907:android:f6fb9326e63a0e59bc95ee",
+        "android_client_info": {
+          "package_name": "org.techtown.gabojago"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "816868276907-dg90k47pnu4fv1gu9gnj93si1o8q6k1v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4It9kLR50g1ba5S-FUIfED7e7YI71cFA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "816868276907-dg90k47pnu4fv1gu9gnj93si1o8q6k1v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

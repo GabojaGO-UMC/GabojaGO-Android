@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:hedgehog="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/folder_record_title_view"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="#fafafa"
+        android:elevation="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/folder_record_backarrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="44dp"
+            android:fontFamily="@font/apple_sd_gothic_neo_r"
+            android:text="&lt;"
+            android:textColor="#b0b0b0"
+            android:textSize="32.2sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="192dp"
+            android:layout_height="29dp"
+            android:fontFamily="@font/apple_sd_gothic_neo_sb"
+            android:gravity="center_horizontal"
+            android:text="기록하자"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/folder_record_backarrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/folder_record_backarrow" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/folder_record_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@id/folder_record_complete_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/folder_record_title_view">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/folder_record_result_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/folderresultbox_orange"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <EditText
+                    android:id="@+id/folder_record_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23sp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/apple_sd_gothic_neo_sb"
+                    android:text="제목을 입력해줘!"
+                    android:background="@color/transparent"
+                    android:textColor="#FFA38E"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/record_result_recyclerview"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/record_result_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/folder_record_title_tv"
+                    tools:listitem="@layout/item_record_folder" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/folder_record_score_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="45dp"
+                android:fontFamily="@font/apple_sd_gothic_neo_sb"
+                android:gravity="center_horizontal"
+                android:text="오늘의 랜덤은 몇 점?"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/folder_record_result_layout" />
+
+            <RatingBar
+                android:id="@+id/folder_record_starscore"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginStart="-28dp"
+                android:numStars="5"
+                android:rating="2.5"
+                android:stepSize="0.5"
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                android:foregroundGravity="left"
+                app:layout_constraintStart_toStartOf="parent"
+                android:progressBackgroundTint="#EBEBEB"
+                android:secondaryProgressTint="#ff6745"
+                android:progressTint="#FF6745"
+                app:layout_constraintTop_toBottomOf="@id/folder_record_score_tv"
+                app:layout_constraintBottom_toTopOf="@id/folder_record_picture_tv" />
+
+
+            <TextView
+                android:id="@+id/folder_record_picture_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/apple_sd_gothic_neo_sb"
+                android:gravity="center_horizontal"
+                android:text="사진 첨부할래?"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/folder_record_score_tv"
+                app:layout_constraintTop_toBottomOf="@id/folder_record_starscore" />
+
+            <HorizontalScrollView
+                android:id="@+id/folder_record_horizontalscroll"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="7dp"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/folder_record_picture_tv">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/folder_record_picture_iv"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="36dp"
+                    android:src="@drawable/camera"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/folder_record_picturenum_tv"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/apple_sd_gothic_neo_sb"
+                    android:gravity="center"
+                    android:text="0/10"
+                    android:textColor="#797979"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="@id/folder_record_picture_iv"
+                    app:layout_constraintEnd_toEndOf="@id/folder_record_picture_iv"
+                    app:layout_constraintStart_toStartOf="@id/folder_record_picture_iv"
+                    app:layout_constraintTop_toTopOf="@id/folder_record_picture_iv" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/folder_record_picture_recyclerview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/folder_record_picture_iv"
+                    tools:listitem="@layout/itempicture" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/folder_record_write_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                android:fontFamily="@font/apple_sd_gothic_neo_sb"
+                android:gravity="center_horizontal"
+                android:text="너의 발자취를 기록해봐."
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/folder_record_picture_tv"
+                app:layout_constraintTop_toBottomOf="@id/folder_record_horizontalscroll" />
+
+
+            <EditText
+                android:id="@+id/folder_record_write_et"
+                android:layout_width="0dp"
+                android:layout_height="210dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/rectangle_32"
+                android:fontFamily="@font/apple_sd_gothic_neo_sb"
+                android:gravity="clip_vertical"
+                android:hint="기록해보세요"
+                android:padding="12dp"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/folder_record_write_tv" />
+
+            <TextView
+                android:id="@+id/folder_record_charactersnum_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="13dp"
+                android:layout_marginBottom="13dp"
+                android:fontFamily="@font/apple_sd_gothic_neo_sb"
+                android:gravity="center_horizontal"
+                android:text="0/1000"
+                android:textColor="#a6000000"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/folder_record_write_et"
+                app:layout_constraintEnd_toEndOf="@id/folder_record_write_et" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/folder_record_complete_view"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#23354F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/folder_record_scrollview" />
+
+    <TextView
+        android:id="@+id/folder_record_complete_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        android:gravity="center_horizontal"
+        android:text="완료"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/folder_record_complete_view"
+        app:layout_constraintEnd_toEndOf="@id/folder_record_complete_view"
+        app:layout_constraintStart_toStartOf="@id/folder_record_complete_view"
+        app:layout_constraintTop_toTopOf="@id/folder_record_complete_view" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

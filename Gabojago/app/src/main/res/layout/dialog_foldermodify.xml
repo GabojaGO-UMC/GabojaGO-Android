@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/dialog_modify_nestedscrollview"
+        android:layout_width="350dp"
+        android:layout_height="400dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:overScrollMode="never"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/dialog_complete_btn">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/folder_modify_layout"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/folderresultbox_orange"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/folder_modify_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23sp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/apple_sd_gothic_neo_sb"
+                    android:text="제목을 입력해줘!"
+                    android:background="@color/transparent"
+                    android:textColor="#FFA38E"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/folder_modify_recyclerview"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/folder_modify_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/folder_modify_title_tv"
+                    tools:listitem="@layout/item_folderresult_modifyversion" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/dialog_modify_recyclerview"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="100dp"
+                android:orientation="vertical"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/folder_modify_layout"
+                tools:listitem="@layout/item_recordresult_modifyversion" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <ImageView
+        android:id="@+id/dialog_complete_btn"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/next_btn"
+        app:layout_constraintTop_toBottomOf="@id/dialog_modify_nestedscrollview"
+        app:layout_constraintEnd_toEndOf="@id/dialog_modify_nestedscrollview"
+        app:layout_constraintStart_toStartOf="@id/dialog_modify_nestedscrollview"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:text="완료"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        app:layout_constraintEnd_toEndOf="@id/dialog_complete_btn"
+        app:layout_constraintStart_toStartOf="@id/dialog_complete_btn"
+        app:layout_constraintTop_toTopOf="@id/dialog_complete_btn"
+        app:layout_constraintBottom_toBottomOf="@id/dialog_complete_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

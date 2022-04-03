@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#00000000"
+    android:backgroundTint="#00000000">
+
+    <ImageView
+        android:id="@+id/dialog_folder_background"
+        android:layout_width="260dp"
+        android:layout_height="280dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/dialog_background"
+        android:background="#00000000"
+        android:backgroundTint="#00000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/dialog_folder_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="선택한 항목,\n정말 삭제할거야?"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        app:layout_constraintStart_toStartOf="@id/dialog_folder_background"
+        app:layout_constraintEnd_toEndOf="@id/dialog_folder_background"
+        app:layout_constraintTop_toTopOf="@id/dialog_folder_background"
+        app:layout_constraintBottom_toBottomOf="@id/dialog_folder_background"/>
+
+
+
+    <ImageView
+        android:id="@+id/dialog_yes_btn"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/realdelete_btn"
+        app:layout_constraintStart_toStartOf="@id/dialog_folder_background"
+        app:layout_constraintEnd_toStartOf="@id/dialog_no_btn"
+        android:layout_marginBottom="50dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/dialog_folder_background"/>
+
+    <ImageView
+        android:id="@+id/dialog_no_btn"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/realdelete_btn"
+        app:layout_constraintStart_toEndOf="@id/dialog_yes_btn"
+        app:layout_constraintEnd_toEndOf="@id/dialog_folder_background"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintBottom_toBottomOf="@id/dialog_folder_background"/>
+
+    <TextView
+        android:layout_width="72dp"
+        android:layout_height="24dp"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        android:textSize="14sp"
+        android:textColor="#ffffff"
+        android:text="응!"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@id/dialog_yes_btn"
+        app:layout_constraintEnd_toEndOf="@id/dialog_yes_btn"
+        app:layout_constraintTop_toTopOf="@id/dialog_yes_btn"
+        app:layout_constraintBottom_toBottomOf="@id/dialog_yes_btn"/>
+
+    <TextView
+        android:layout_width="72dp"
+        android:layout_height="24dp"
+        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        android:textSize="14sp"
+        android:textColor="#ffffff"
+        android:text="아니!"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@id/dialog_no_btn"
+        app:layout_constraintEnd_toEndOf="@id/dialog_no_btn"
+        app:layout_constraintTop_toTopOf="@id/dialog_no_btn"
+        app:layout_constraintBottom_toBottomOf="@id/dialog_no_btn"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
