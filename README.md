@@ -4,8 +4,8 @@
 
 ![다운로드](https://user-images.githubusercontent.com/87413634/161967890-350621f7-e3b6-4dbb-8699-b3e9616803a8.png)
 
-# otion
-:bulb: [ GabojaGO notion ](https://bit.ly/Gabojago)
+# Notion
+:bulb: [ GabojaGO Notion page ](https://bit.ly/Gabojago)
 
 
 # Download URL
