@@ -21,6 +21,10 @@
 <img width="200" alt="스크린샷 2022-04-08 오전 1 39 13" src="https://user-images.githubusercontent.com/77428876/162254180-e7d39323-2e6c-4adb-910d-35a4df4df76f.png">   <img width="200" alt="스크린샷 2022-04-08 오전 1 39 17" src="https://user-images.githubusercontent.com/77428876/162254181-b0abb907-7e35-4572-8c3d-0979323c7930.png">   <img width="200" alt="스크린샷 2022-04-08 오전 1 39 23" src="https://user-images.githubusercontent.com/77428876/162254182-c4ddb141-713d-40c3-81be-9e37200ef4bb.png">
 
 
+# Wiki
+https://github.com/GabojaGO-UMC/GabojaGO-Android/wiki
+
+
 # Tech Stack
 ```AndroidStudio``` ```Kotlin``` ```Firebase```
 
