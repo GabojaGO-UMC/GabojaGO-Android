@@ -17,17 +17,17 @@
 
 
 # Screen
-<img width="423" alt="스크린샷 2022-04-08 오전 1 30 19" src="https://user-images.githubusercontent.com/77428876/162253099-ed5f1357-0c35-44cf-8cfe-a417815c24a2.png">
-<img width="423" alt="스크린샷 2022-04-08 오전 1 30 29" src="https://user-images.githubusercontent.com/77428876/162253264-c5211e8d-4c32-417e-bd9b-e95eefae78e1.png">
 
-<img width="423" alt="스크린샷 2022-04-08 오전 1 30 33" src="https://user-images.githubusercontent.com/77428876/162253336-4a2cc42f-4e99-45d7-8102-9b3be86eb0b9.png">
-<img width="423" alt="스크린샷 2022-04-08 오전 1 30 39" src="https://user-images.githubusercontent.com/77428876/162253367-4db8950e-437c-4787-ac59-836a6271fe58.png">
-<img width="423" alt="스크린샷 2022-04-08 오전 1 30 44" src="https://user-images.githubusercontent.com/77428876/162253384-41836c4e-1057-45da-a64c-9d3ac0eeb0be.png">
-<img width="423" alt="스크린샷 2022-04-08 오전 1 30 49" src="https://user-images.githubusercontent.com/77428876/162253409-e4e5fe12-3826-4160-8efb-1f1973e02d55.png">
-<img width="423" alt="스크린샷 2022-04-08 오전 1 30 53" src="https://user-images.githubusercontent.com/77428876/162253420-46e0855d-537d-4540-aa1b-e1751a823a89.png">
-<img width="423" alt="스크린샷 2022-04-08 오전 1 31 01" src="https://user-images.githubusercontent.com/77428876/162253447-f579b05c-c3f8-4538-b6e3-a9dd5e0c9f2e.png">
-<img width="423" alt="스크린샷 2022-04-08 오전 1 31 08" src="https://user-images.githubusercontent.com/77428876/162253496-8096aace-8d96-4db1-9784-4b5c2507f71f.png">
-<img width="423" alt="스크린샷 2022-04-08 오전 1 31 15" src="https://user-images.githubusercontent.com/77428876/162253512-3995408f-90e8-401d-a87b-ea5fd204c2ca.png">
+<img width="200" alt="스크린샷 2022-04-08 오전 1 38 34" src="https://user-images.githubusercontent.com/77428876/162254155-b39e098d-d608-4272-b2c1-4bcac445d382.png">
+<img width="200" alt="스크린샷 2022-04-08 오전 1 38 40" src="https://user-images.githubusercontent.com/77428876/162254158-1bc90a75-ace8-4681-bef1-9968c2ad02e4.png">
+<img width="200" alt="스크린샷 2022-04-08 오전 1 38 47" src="https://user-images.githubusercontent.com/77428876/162254159-284c3c5d-fe97-4bf6-aef2-75302507fbab.png">
+<img width="200" alt="스크린샷 2022-04-08 오전 1 38 51" src="https://user-images.githubusercontent.com/77428876/162254164-82562d00-dab0-46b7-9aa3-a695006900b0.png">
+<img width="200" alt="스크린샷 2022-04-08 오전 1 38 57" src="https://user-images.githubusercontent.com/77428876/162254167-6146a7cd-5e65-4bbc-a87e-9a603e3e3cd5.png">
+<img width="200" alt="스크린샷 2022-04-08 오전 1 39 02" src="https://user-images.githubusercontent.com/77428876/162254171-8c29cd4a-71f1-46cd-b556-aecdec5779f1.png">
+<img width="200" alt="스크린샷 2022-04-08 오전 1 39 07" src="https://user-images.githubusercontent.com/77428876/162254174-0dadd1d6-ec1c-4c1a-aa1f-65f8ab58b1d0.png">
+<img width="200" alt="스크린샷 2022-04-08 오전 1 39 13" src="https://user-images.githubusercontent.com/77428876/162254180-e7d39323-2e6c-4adb-910d-35a4df4df76f.png">
+<img width="200" alt="스크린샷 2022-04-08 오전 1 39 17" src="https://user-images.githubusercontent.com/77428876/162254181-b0abb907-7e35-4572-8c3d-0979323c7930.png">
+<img width="200" alt="스크린샷 2022-04-08 오전 1 39 23" src="https://user-images.githubusercontent.com/77428876/162254182-c4ddb141-713d-40c3-81be-9e37200ef4bb.png">
 
 # Author
 + organization : [ @GabojaGO-UMC ](https://github.com/GabojaGO-UMC)
