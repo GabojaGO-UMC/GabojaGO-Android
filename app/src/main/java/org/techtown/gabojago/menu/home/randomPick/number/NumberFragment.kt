@@ -35,9 +35,9 @@ import androidx.core.view.updateLayoutParams as updateLayoutParams1
 class NumberFragment : Fragment(), RandomView, RecordCountView {
     lateinit var binding: FragmentNumberBinding
     private lateinit var callback: OnBackPressedCallback
-    var startNum: Int = 0
-    var endNum: Int = 0
-    var num: Int = 0
+    var startNum: Int = 1
+    var endNum: Int = 10
+    var num: Int = 3
     var isOverlap: Boolean = false
     private var resArray: Array<Int?> = (arrayOf(-1))
 
@@ -70,16 +70,10 @@ class NumberFragment : Fragment(), RandomView, RecordCountView {
         var getNumberOption = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()){ result ->
             if(result.resultCode == AppCompatActivity.RESULT_OK){
-                startNum = result.data?.getIntExtra("start", 0)!!
-                endNum = result.data?.getIntExtra("end", 0)!!
-                num = result.data?.getIntExtra("num", 0)!!
+                startNum = result.data?.getIntExtra("start", 1)!!
+                endNum = result.data?.getIntExtra("end", 10)!!
+                num = result.data?.getIntExtra("num", 3)!!
                 isOverlap = result.data?.getBooleanExtra("overlap", true)!!
-                resArray = getNumbers()
-                Log.d("GETNUMBEROPTION",
-                    startNum.toString() + " " + endNum.toString() + " " + num.toString() + " " + isOverlap.toString())
-                for(i: Int in 0 until num){
-                    Log.d("GETRESARRAY", resArray[i].toString())
-                }
             }
         }
 
@@ -129,6 +123,7 @@ class NumberFragment : Fragment(), RandomView, RecordCountView {
         }
 
         binding.numberGoBtn.setOnClickListener { //가보자고 버튼을 눌렀을 때
+            resArray = getNumbers()
             if(resArray[0] == -1){  //옵션 설정 안했을 때 validation
                 MyToast.createToast(
                     requireContext(), "옵션을 설정한 후 실행해 주세요", 90, true
@@ -157,6 +152,7 @@ class NumberFragment : Fragment(), RandomView, RecordCountView {
         }
 
         binding.numberRetryBtn.setOnClickListener {
+            resArray = getNumbers()
             for(i in 0..9){
                 ballGroundArr[i].visibility = View.GONE
                 resTextArr[i].visibility = View.GONE

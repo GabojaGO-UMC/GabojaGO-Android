@@ -35,8 +35,8 @@ class ClockFragment : Fragment(), RandomView, RecordCountView {
 
     lateinit var binding: FragmentClockBinding
     private lateinit var callback: OnBackPressedCallback
-    var startNum: Int = 12
-    var endNum: Int = 12
+    var startNum: Int = 9
+    var endNum: Int = 3
     var getResClock: Int = 12
     private var clockAngle = arrayOf(
         30f,
@@ -79,31 +79,11 @@ class ClockFragment : Fragment(), RandomView, RecordCountView {
         super.onCreate(savedInstanceState)
         binding = FragmentClockBinding.inflate(layoutInflater)
 
-        var viewArr = arrayOf(
-            binding.clock1,
-            binding.clock2,
-            binding.clock3,
-            binding.clock4,
-            binding.clock5,
-            binding.clock6,
-            binding.clock7,
-            binding.clock8,
-            binding.clock9,
-            binding.clock10,
-            binding.clock11,
-            binding.clock12
-        )
-
         var getClockOption = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
-                startNum = result.data?.getIntExtra("start", 12)!!
-                endNum = result.data?.getIntExtra("end", 12)!!
-                if (startNum > endNum) {
-                    clockRangeSetter(viewArr, startNum - 1, endNum + 12 - 1)
-                } else {
-                    clockRangeSetter(viewArr, startNum - 1, endNum - 1)
-                }
+                startNum = result.data?.getIntExtra("start", 9)!!
+                endNum = result.data?.getIntExtra("end", 3)!!
             }
         }
 
@@ -129,8 +109,8 @@ class ClockFragment : Fragment(), RandomView, RecordCountView {
             }
             else{
                 moveClock()
-                binding.clockOptionBtn.visibility = View.GONE
-                binding.clockGoBtn.visibility = View.GONE
+                binding.clockOptionBtn.visibility = View.INVISIBLE
+                binding.clockGoBtn.visibility = View.INVISIBLE
                 binding.clockInfoTitleTv.visibility = View.INVISIBLE
                 binding.clockInfoTv.visibility = View.INVISIBLE
                 Handler().postDelayed({
@@ -153,9 +133,9 @@ class ClockFragment : Fragment(), RandomView, RecordCountView {
                 0.5f)
             rotateAnimationResult.fillAfter = true
             binding.clockArrowIv.startAnimation(rotateAnimationResult)
-            binding.clockResultTv.visibility = View.GONE
-            binding.clockRetryBtn.visibility = View.GONE
-            binding.clockSaveBtn.visibility = View.GONE
+            binding.clockResultTv.visibility = View.INVISIBLE
+            binding.clockRetryBtn.visibility = View.INVISIBLE
+            binding.clockSaveBtn.visibility = View.INVISIBLE
             Handler().postDelayed({
                 moveClock()
             }, 200)
@@ -229,6 +209,11 @@ class ClockFragment : Fragment(), RandomView, RecordCountView {
 
     override fun onResume() {
         super.onResume()
+        if (startNum > endNum) {
+            clockRangeSetter(startNum - 1, endNum + 12 - 1)
+        } else {
+            clockRangeSetter(startNum - 1, endNum - 1)
+        }
         val animationClose = AnimationUtils.loadAnimation(activity, R.anim.anim_close_scale)
         binding.clockContentsView.startAnimation(animationClose)
         binding.clockInfoTitleTv.visibility = View.VISIBLE
@@ -372,12 +357,34 @@ class ClockFragment : Fragment(), RandomView, RecordCountView {
         }, 3600)
     }
 
-    private fun clockRangeSetter(viewArr: Array<TextView>, start: Int, end: Int) {
-        viewArr[start].setTextColor(Color.rgb(255, 103, 69))
-        viewArr[end % 12].setTextColor(Color.rgb(255, 103, 69))
+    private fun clockRangeSetter(start: Int, end: Int) {
+        var viewArr = arrayOf(
+            binding.clock1,
+            binding.clock2,
+            binding.clock3,
+            binding.clock4,
+            binding.clock5,
+            binding.clock6,
+            binding.clock7,
+            binding.clock8,
+            binding.clock9,
+            binding.clock10,
+            binding.clock11,
+            binding.clock12
+        )
+        for (i: Int in 0..11) {
+            if(i%3==2) {
+                viewArr[i].setTextColor(Color.rgb(35, 53, 79))
+            }
+            else{
+                viewArr[i].setTextColor(Color.rgb(193, 216, 208))
+            }
+        }
         for (i: Int in start..end) {
             viewArr[i % 12].setTextColor(Color.rgb(255, 147, 124))
         }
+        viewArr[start].setTextColor(Color.rgb(255, 103, 69))
+        viewArr[end % 12].setTextColor(Color.rgb(255, 103, 69))
     }
 
     override fun onRandomLoading() {
