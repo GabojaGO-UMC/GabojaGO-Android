@@ -15,7 +15,7 @@ local.properties
 
 # client id 포함된 부분 ignore
 /app/src/main/java/org/techtown/gabojago/start/login/LoginActivity.kt
-/app/src/main/java/org/techtown/gabojago/menu/manage/auth/WithdrawDialog.kt
+/app/src/main/java/org/techtown/gabojago/menu/manage/auth/WithdrawalDialog.kt
 /app/src/main/java/org/techtown/gabojago/menu/manage/auth/LogoutDialog.kt
 
 ### Android ###
