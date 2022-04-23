@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/homeFragment"
-            android:icon="@drawable/bottom_back1"
-            app:showAsAction="always"
-            android:title="" />
-        <item
             android:id="@+id/recordFragment"
             android:icon="@drawable/bottom_back2"
             app:showAsAction="always"
             android:title="" />
         <item
-            android:id="@+id/goagainFragment"
-            android:icon="@drawable/bottom_back3"
+            android:id="@+id/homeFragment"
+            android:icon="@drawable/bottom_back1"
+            android:checked="true"
             app:showAsAction="always"
             android:title="" />
+<!--        <item-->
+<!--            android:id="@+id/goagainFragment"-->
+<!--            android:icon="@drawable/bottom_back3"-->
+<!--            app:showAsAction="always"-->
+<!--            android:title="" />-->
         <item
             android:id="@+id/manageFragment"
             android:icon="@drawable/bottom_back4"

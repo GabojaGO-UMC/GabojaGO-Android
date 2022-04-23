@@ -275,7 +275,6 @@ class RecordLookFragment(private val hasRecording: Boolean, private val Idx:Int,
         var imageList = ArrayList<String>()
         val name = "https://firebasestorage.googleapis.com/v0/b/gabojago-54fc6.appspot.com/o/images%2Fimage_background.png?alt=media&token=8d2965c1-5ab3-4d7f-964b-3918a0d01829"
         imageList.add(name)
-        Log.e("폴더조회",message)
 
         binding.recordLookNameTv.text = "제목이 비어있어!"
         setStarState(2.5)
@@ -368,7 +367,6 @@ class RecordLookFragment(private val hasRecording: Boolean, private val Idx:Int,
         var imageList = ArrayList<String>()
         val name = "https://firebasestorage.googleapis.com/v0/b/gabojago-54fc6.appspot.com/o/images%2Fimage_background.png?alt=media&token=8d2965c1-5ab3-4d7f-964b-3918a0d01829"
         imageList.add(name)
-        Log.e("개별조회",message)
 
         binding.recordLookNameTv.text = "제목이 비어있어!"
         setStarState(2.5)

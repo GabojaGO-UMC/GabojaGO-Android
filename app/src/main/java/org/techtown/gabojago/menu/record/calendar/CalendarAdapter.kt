@@ -12,8 +12,10 @@ import java.text.DecimalFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
+//달력 날짜 그리드뷰-어댑터
 class CalendarAdapter(private val viewDate: String,private val randomresultdateList :ArrayList<Int>) : RecyclerView.Adapter <CalendarAdapter.ViewHolder>() {
 
+    //클릭리스너 인터페이스
     interface MyItemClickListener {
         fun onItemClick(date:String)
     }
@@ -38,18 +40,21 @@ class CalendarAdapter(private val viewDate: String,private val randomresultdateL
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding: ItemCalendarGridviewBinding =
             ItemCalendarGridviewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+
+        //실제 화면 size 받아오기
         val display = parent.display
         val size = Point()
         display.getSize(size)
         val width = size.x
         val height = size.y
+
+        //받아온 화면 size에 따라 조정
         binding.itemLayout.layoutParams.height = height/15
-//        binding.itemGridviewTv.setTextSize(COMPLEX_UNIT_PX,height/60.toFloat())
-//        binding.itemGridviewRecordIv.layoutParams.width = height/30
-//        binding.itemGridviewRecordIv.layoutParams.height = height/30
         binding.itemEmpty.layoutParams.height = height/160
         binding.itemGridviewTodayIv.layoutParams.height = height/140
         binding.itemGridviewTodayIv.layoutParams.width = height/140
+
+        //달력 날짜 초기 설정
         setEmptyDate(viewDate)
         return ViewHolder(binding)
     }
@@ -60,6 +65,7 @@ class CalendarAdapter(private val viewDate: String,private val randomresultdateL
         holder.bind(position)
 
         holder.binding.itemGridviewTv.setOnClickListener{
+            //달력 날짜 형식 두자리수로 변경
             val df = DecimalFormat("00")
             var date = df.format(days[position].toInt())
             mItemClickListener.onItemClick(specialDate+date)
@@ -75,18 +81,16 @@ class CalendarAdapter(private val viewDate: String,private val randomresultdateL
 
             if (days[position] != "") {
                 today()
+                //오늘날짜에 점 표시
                 if (todayYear == year.toInt() && todayMonth == month.toInt() && todayDate == days[position].toInt()) {
                     binding.itemGridviewTodayIv.visibility = View.VISIBLE
                 } else {
                     binding.itemGridviewTodayIv.visibility = View.GONE
                 }
-                Log.e("randomresult2", (randomresultdateList.size).toString())
 
+                //모험한 날짜에 색표시
                 if ((position - daynum + 2) == randomresultdateList[position - daynum+2]) {
                     binding.itemGridviewRecordIv.visibility = View.VISIBLE
-                    Log.e("randomresult2", (position - daynum + 1).toString())
-                    Log.e("randomresult2",
-                        (randomresultdateList[position - daynum + 1]).toString())
                 }
             }
         }
@@ -95,6 +99,7 @@ class CalendarAdapter(private val viewDate: String,private val randomresultdateL
 
     override fun getItemCount(): Int = setEmptyDate(viewDate)
 
+    //받아온 날짜에 따른 달력 세팅 함수
     private fun setEmptyDate(eventDate: String): Int {
         val cal = Calendar.getInstance()
         cal.set(eventDate.substring(0,4).toInt(), eventDate.substring(4,6).toInt() - 1, 1)
@@ -120,6 +125,7 @@ class CalendarAdapter(private val viewDate: String,private val randomresultdateL
         return cal.getActualMaximum(Calendar.DAY_OF_MONTH)
     }
 
+    //오늘 날짜 세팅
     private fun today() {
         val now: Long = System.currentTimeMillis()
         val date = Date(now)

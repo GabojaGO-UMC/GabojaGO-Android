@@ -223,8 +223,25 @@ class RecordFragment : Fragment(), RecordCountView, SingleResultListView, Folder
             val recordWeekRVAdapter = RecordWeekRVAdapter(stringDate)
             binding.recordWeekRecyclerview.adapter = recordWeekRVAdapter
 
+            recordWeekRVAdapter.setMyItemClickListener(object :
+                RecordWeekRVAdapter.MyItemClickListener {
+                override fun onItemClick(day: String) {
+                    binding.recordDivisionView.visibility = View.VISIBLE
+                    binding.recordEmptyTv.visibility = View.VISIBLE
+                    binding.recordNotifyTv.visibility = View.GONE
+                    recordService.getSingleResultList(userJwt, day)
+                    recordService.getFolderResultList(userJwt, day)
+                    recordService.recordCount(userJwt, day)
+                    binding.recordMonthTv.setText("< " + day.substring(4, 6).toInt()
+                        .toString() + "월")
+                    binding.recordDateTv.setText(day.substring(0, 4) + "년 " + day.substring(4,
+                        6).toInt().toString() + "월 " + day.substring(6).toInt()
+                        .toString() + "일")
+                }
+            })
             recordService.getSingleResultList(userJwt,stringDate)
             recordService.getFolderResultList(userJwt,stringDate)
+            recordService.recordCount(userJwt,stringDate)
         }
     }
 
@@ -360,8 +377,6 @@ class RecordFragment : Fragment(), RecordCountView, SingleResultListView, Folder
         val date = Date(now)
         val dateFormat = SimpleDateFormat("yyyyMMdd", Locale("ko", "KR"))
         val stringDate = dateFormat.format(date)
-        Log.e("날짜",result.date)
-        Log.e("날짜2",stringDate)
 
         if(result.date.toInt()!=stringDate.toInt()){
             binding.recordTodayIv.visibility = View.VISIBLE

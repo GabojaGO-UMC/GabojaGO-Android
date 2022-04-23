@@ -71,7 +71,6 @@ class DialogRealDelete(private val recordList: ArrayList<SingleResultListResult>
                     }
                 }
             }
-            Log.e("폴더삭제",resultDelete.toString())
             recordService.putIdx(userJwt,resultDelete,folderDelete)
         }
 
@@ -87,7 +86,6 @@ class DialogRealDelete(private val recordList: ArrayList<SingleResultListResult>
         (context as MainActivity).supportFragmentManager.beginTransaction()
             .replace(R.id.main_frm, RecordFragment())
             .commitAllowingStateLoss()
-        Log.e("성공","성공")
         binding2.recordBlurView.visibility = View.GONE
         dismiss()
     }
