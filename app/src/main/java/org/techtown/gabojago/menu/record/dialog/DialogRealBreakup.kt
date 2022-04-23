@@ -67,7 +67,6 @@ class DialogRealBreakup(private val folderIdx: Int) : DialogFragment() ,FolderBr
         (context as MainActivity).supportFragmentManager.beginTransaction()
             .replace(R.id.main_frm, RecordFragment())
             .commitAllowingStateLoss()
-        Log.e("성공","성공")
         mDismissListener.onDismiss(this)
         dismiss()
     }

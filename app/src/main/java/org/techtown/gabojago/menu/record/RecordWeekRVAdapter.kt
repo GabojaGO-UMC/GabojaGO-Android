@@ -47,7 +47,6 @@ class RecordWeekRVAdapter(private val viewDate: String): RecyclerView.Adapter<Re
 
         holder.itemView.setOnClickListener{
             Log.e("calendar","error나는 부분")
-
             mItemClickListener?.onItemClick(alldays[position])
             oldPosition = selectedPosition
             selectedPosition = position
