@@ -67,6 +67,9 @@ class DialogFolderSelect(private val recordList: ArrayList<SingleResultListResul
             }else{
                 recordService.putFolderMakeIdx(userJwt,folderMake)
             }
+            Log.e("선택",folderMake.toString())
+
+
         }
 
         binding.dialogSelectCancleIv.setOnClickListener{

@@ -59,7 +59,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/number_start_tv"
         android:inputType="number"
         android:digits="0123456789"
@@ -70,11 +70,8 @@
         android:text="0"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:textSelectHandle="@color/primary_03"
-        android:textCursorDrawable="@color/primary_03"
         android:fontFamily="@font/apple_sd_gothic_neo_sb"
         android:background="@drawable/item_box"
-        android:cursorVisible="false"
         android:gravity="center"
         android:layout_marginEnd="13dp"
         app:layout_constraintEnd_toStartOf="@id/number_range_middle_tv"
@@ -98,7 +95,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/number_end_tv"
         android:inputType="number"
         android:digits="0123456789"
@@ -109,11 +106,8 @@
         android:textStyle="bold"
         android:textSize="27sp"
         android:textColor="@color/black"
-        android:textSelectHandle="@color/primary_03"
-        android:textCursorDrawable="@color/primary_03"
         android:fontFamily="@font/apple_sd_gothic_neo_sb"
         android:background="@drawable/item_box"
-        android:cursorVisible="false"
         android:gravity="center"
         android:layout_marginStart="13dp"
         app:layout_constraintStart_toEndOf="@id/number_range_middle_tv"
@@ -189,7 +183,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/number_comp_btn"
-        app:layout_constraintBottom_toBottomOf="@id/number_comp_btn"
-        app:layout_constraintVertical_bias="0.4"/>
+        app:layout_constraintBottom_toBottomOf="@id/number_comp_btn"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

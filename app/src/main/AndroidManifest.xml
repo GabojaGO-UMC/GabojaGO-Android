@@ -3,13 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="org.techtown.gabojago">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_go"
@@ -19,66 +13,46 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Gabojago">
 
-        <activity
-            android:name="com.nhn.android.naverlogin.ui.OAuthCustomTabActivity"
-            android:exported="true"
-            android:configChanges="orientation|screenSize"
-            android:launchMode="singleTask"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <!-- Intent URL 에서 로그인 액티비티를 실행하기 위해 설정 -->
-                <data
-                    android:host="authorize"
-                    android:path="/"
-                    android:scheme="naver3rdpartylogin" />
-            </intent-filter>
-        </activity>
-
         <activity android:name=".start.splash.SplashActivity"
-            android:screenOrientation="portrait"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <activity android:name=".start.login.LoginActivity"
-            android:exported="true"
             android:screenOrientation="portrait"/>
         <activity android:name=".main.MainActivity"
-            android:exported="true"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait"/>
 
+        <activity android:name=".menu.record.calendar.CalendarActivity"
+            android:screenOrientation="portrait"/>
+
         <!--randomPick Options-->
-        <activity android:name="org.techtown.gabojago.menu.home.randomPick.wheel.WheelOptionActivity"
-            android:exported="true"
+        <activity android:name=".menu.randomPick.wheel.WheelOptionActivity"
             android:theme="@style/Theme.AppCompat.Transparent.NoActionBar"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait"/>
-        <activity android:name="org.techtown.gabojago.menu.home.randomPick.clock.ClockOptionActivity"
-            android:exported="true"
+        <activity android:name=".menu.randomPick.clock.ClockOptionActivity"
             android:theme="@style/Theme.AppCompat.Transparent.NoActionBar"
             android:screenOrientation="portrait"/>
-        <activity android:name="org.techtown.gabojago.menu.home.randomPick.clock.ClockSelectActivity"
-            android:exported="true"
+        <activity android:name=".menu.randomPick.clock.ClockSelectActivity"
             android:theme="@style/Theme.AppCompat.Transparent.NoActionBar"
             android:screenOrientation="portrait"/>
-        <activity android:name="org.techtown.gabojago.menu.home.randomPick.number.NumberOptionActivity"
-            android:exported="true"
+        <activity android:name=".menu.randomPick.number.NumberOptionActivity"
             android:theme="@style/Theme.AppCompat.Transparent.NoActionBar"
             android:screenOrientation="portrait"/>
-        <activity android:name="org.techtown.gabojago.menu.home.randomPick.number.NumberSelectNumActivity"
-            android:exported="true"
+        <activity android:name=".menu.randomPick.number.NumberSelectActivity"
             android:theme="@style/Theme.AppCompat.Transparent.NoActionBar"
             android:screenOrientation="portrait"/>
-        <activity android:name="org.techtown.gabojago.menu.home.randomPick.color.ColorResultActivity"
-            android:exported="true"
+        <activity android:name=".menu.randomPick.number.NumberSelectNumActivity"
+            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".menu.randomPick.color.ColorResultActivity"
             android:theme="@style/Theme.AppCompat.Transparent.NoActionBar.Dim"
             android:screenOrientation="portrait"/>
     </application>
