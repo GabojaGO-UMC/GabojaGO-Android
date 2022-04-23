@@ -1,14 +1,16 @@
 package org.techtown.gabojago.menu.record.look
 
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_look_vp.view.*
 import kotlinx.android.synthetic.main.fragment_record_look.view.*
 import org.techtown.gabojago.R
 import java.util.*
 
-class RecordLookViewpagerAdapter(ImageArr: ArrayList<Int>)
+class RecordLookViewpagerAdapter(ImageArr: ArrayList<String>)
     : RecyclerView.Adapter<RecordLookViewpagerAdapter.LookViewHolder>() {
     var item = ImageArr
     override fun onCreateViewHolder(
@@ -20,7 +22,7 @@ class RecordLookViewpagerAdapter(ImageArr: ArrayList<Int>)
         holder: RecordLookViewpagerAdapter.LookViewHolder,
         position: Int,
     ) {
-        holder.lookImg.setImageResource(item[position])
+        Glide.with(holder.lookImg.context).load(item[position]).into(holder.lookImg)
     }
 
     override fun getItemCount(): Int = item.size

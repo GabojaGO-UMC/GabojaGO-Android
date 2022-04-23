@@ -5,9 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import org.techtown.gabojago.R
 import org.techtown.gabojago.databinding.ItemRecordFolderBinding
-import org.techtown.gabojago.menu.record.recordRetrofit.FolderResultList
 import org.techtown.gabojago.menu.record.recordRetrofit.InFolderListResult
-
+//폴더 내부기록 리사이클러뷰 어댑터 클래스
 class RecordFolderResultRVAdapter(private val hasRecording:Boolean ,private val resultList: ArrayList<InFolderListResult>): RecyclerView.Adapter<RecordFolderResultRVAdapter.ViewHolder>(){
 
     //뷰홀더 생성->호출되는 함수->아이템 뷰 객체를 만들어서 뷰홀더에 던져줌
@@ -28,6 +27,7 @@ class RecordFolderResultRVAdapter(private val hasRecording:Boolean ,private val 
         RecyclerView.ViewHolder(binding.root) {
         fun bind(result:InFolderListResult) {
 
+            //기록내용 및 색, 이미지  조정(기록여부에 따라)
             binding.itemFolderrecordResultTv.text = result.resultContent
             binding.itemFolderrecordClockTv.text = result.createAt
             if(hasRecording){

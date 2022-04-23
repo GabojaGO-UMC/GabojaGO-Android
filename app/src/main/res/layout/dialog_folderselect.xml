@@ -7,9 +7,19 @@
     android:background="#00000000"
     android:backgroundTint="#00000000">
 
+    <ImageView
+        android:id="@+id/dialog_select_cancle_iv"
+        android:layout_width="50dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/dialog_cancle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/dialog_select_recyclerview"
+        app:layout_constraintBottom_toTopOf="@id/dialog_select_recyclerview"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/dialog_select_recyclerview"
-        android:layout_width="350dp"
+        android:layout_width="340dp"
         android:layout_height="400dp"
         android:orientation="vertical"
         android:overScrollMode="never"

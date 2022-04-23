@@ -33,7 +33,7 @@
         <TextView
             android:layout_width="192dp"
             android:layout_height="29dp"
-            android:fontFamily="@font/apple_sd_gothic_neo_sb"
+            android:fontFamily="@font/nanum_square_round_extrabold"
             android:textStyle="normal"
             android:layout_marginBottom="15dp"
             android:textSize="20sp"
@@ -47,192 +47,197 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/home_menu_info_tv"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/home_menu_contents_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/apple_sd_gothic_neo_sb"
-        android:textStyle="normal"
-        android:textSize="14sp"
-        android:textColor="#808080"
-        android:lineSpacingExtra="6.9sp"
-        android:gravity="center_horizontal"
-        android:text="골라봐, 너의 모험을 도와줄거야!"
-        android:layout_marginTop="33dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/home_menu_title_view"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/home_menu_wheel_view"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:background="@drawable/menu_rectangle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/home_menu_clock_view"
-        app:layout_constraintTop_toBottomOf="@id/home_menu_info_tv"
-        app:layout_constraintBottom_toTopOf="@id/home_menu_number_view">
-
-        <ImageView
-            android:id="@+id/home_menu_wheel_iv"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/menu_roulette"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/home_menu_wheel_tv"
-            app:layout_constraintVertical_bias="1"
-            />
-
-        <TextView
-            android:id="@+id/home_menu_wheel_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/apple_sd_gothic_neo_sb"
-            android:textSize="12sp"
-            android:textColor="#000000"
-            android:gravity="center_horizontal"
-            android:text="돌려돌려 돌림판"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_menu_wheel_iv"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/home_menu_clock_view"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:background="@drawable/menu_rectangle"
-        app:layout_constraintStart_toEndOf="@id/home_menu_wheel_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/home_menu_info_tv"
-        app:layout_constraintBottom_toTopOf="@id/home_menu_number_view"
-        >
-
-        <ImageView
-            android:id="@+id/home_menu_clock_iv"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/menu_clock"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/home_menu_clock_tv"
-            app:layout_constraintVertical_bias="1"
-            />
-
-        <TextView
-            android:id="@+id/home_menu_clock_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/apple_sd_gothic_neo_sb"
-            android:textSize="12sp"
-            android:textColor="#000000"
-            android:gravity="center_horizontal"
-            android:text="N시 방향"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_menu_clock_iv"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/home_menu_color_view"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:background="@drawable/menu_rectangle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/home_menu_number_view"
-        app:layout_constraintTop_toBottomOf="@id/home_menu_wheel_view"
-        app:layout_constraintBottom_toTopOf="@id/home_menu_character_iv"
-        >
-
-        <ImageView
-            android:id="@+id/home_menu_color_iv"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/menu_color"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/home_menu_color_tv"
-            app:layout_constraintVertical_bias="1"
-            />
-
-        <TextView
-            android:id="@+id/home_menu_color_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/apple_sd_gothic_neo_sb"
-            android:textSize="12sp"
-            android:textColor="#000000"
-            android:gravity="center_horizontal"
-            android:text="컬러박스 뽑기"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_menu_color_iv"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/home_menu_number_view"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:background="@drawable/menu_rectangle"
-        app:layout_constraintStart_toEndOf="@id/home_menu_color_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/home_menu_clock_view"
-        app:layout_constraintBottom_toTopOf="@id/home_menu_character_iv"
-        >
-
-        <ImageView
-            android:id="@+id/home_menu_number_iv"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/menu_number"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/home_menu_number_tv"
-            app:layout_constraintVertical_bias="1"
-            />
-
-        <TextView
-            android:id="@+id/home_menu_number_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/apple_sd_gothic_neo_sb"
-            android:textSize="12sp"
-            android:textColor="#000000"
-            android:gravity="center_horizontal"
-            android:text="빙글빙글 숫자 뽑기"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_menu_number_iv"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ImageView
-        android:id="@+id/home_menu_character_iv"
-        android:layout_width="233dp"
-        android:layout_height="134dp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/home_menu_color_view"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="1"
-        />
+        app:layout_constraintVertical_bias="0.35">
 
+        <TextView
+            android:id="@+id/home_menu_info_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/apple_sd_gothic_neo_sb"
+            android:textSize="14sp"
+            android:textColor="#808080"
+            android:gravity="center_horizontal"
+            android:text="골라봐, 너의 모험을 도와줄거야!"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_menu_wheel_view"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/menu_rectangle"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/home_menu_clock_view"
+            app:layout_constraintTop_toBottomOf="@id/home_menu_info_tv"
+
+            >
+
+            <ImageView
+                android:id="@+id/home_menu_wheel_iv"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/menu_roulette"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/home_menu_wheel_tv"
+                app:layout_constraintVertical_bias="1"
+                />
+
+            <TextView
+                android:id="@+id/home_menu_wheel_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/apple_sd_gothic_neo_sb"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:gravity="center_horizontal"
+                android:text="돌려돌려 돌림판"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_menu_wheel_iv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_menu_clock_view"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/menu_rectangle"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toEndOf="@id/home_menu_wheel_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_menu_info_tv"
+            app:layout_constraintBottom_toTopOf="@id/home_menu_number_view"
+            >
+
+            <ImageView
+                android:id="@+id/home_menu_clock_iv"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/menu_clock"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/home_menu_clock_tv"
+                app:layout_constraintVertical_bias="1"
+                />
+
+            <TextView
+                android:id="@+id/home_menu_clock_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/apple_sd_gothic_neo_sb"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:gravity="center_horizontal"
+                android:text="N시 방향"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_menu_clock_iv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_menu_color_view"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/menu_rectangle"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/home_menu_number_view"
+            app:layout_constraintTop_toBottomOf="@id/home_menu_wheel_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+            <ImageView
+                android:id="@+id/home_menu_color_iv"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/menu_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/home_menu_color_tv"
+                app:layout_constraintVertical_bias="1"
+                />
+
+            <TextView
+                android:id="@+id/home_menu_color_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/apple_sd_gothic_neo_sb"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:gravity="center_horizontal"
+                android:text="컬러박스 뽑기"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_menu_color_iv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_menu_number_view"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/menu_rectangle"
+            android:layout_marginTop="22dp"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toEndOf="@id/home_menu_color_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_menu_clock_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+            <ImageView
+                android:id="@+id/home_menu_number_iv"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/menu_number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/home_menu_number_tv"
+                app:layout_constraintVertical_bias="1"
+                />
+
+            <TextView
+                android:id="@+id/home_menu_number_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/apple_sd_gothic_neo_sb"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:gravity="center_horizontal"
+                android:text="빙글빙글 숫자 뽑기"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_menu_number_iv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

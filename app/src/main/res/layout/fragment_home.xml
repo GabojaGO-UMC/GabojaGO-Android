@@ -9,13 +9,14 @@
         android:id="@+id/home_title_tv"
         android:layout_width="281dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/apple_sd_gothic_neo_sb"
+        android:fontFamily="@font/nanum_square_round_otf_extrabold"
         android:textStyle="bold"
         android:textSize="36sp"
         android:textColor="#000000"
         android:text="아무도 모르는\n나의 도착지"
         android:layout_marginTop="90dp"
-        app:layout_constraintStart_toStartOf="@id/home_start_iv"
+        android:layout_marginStart="28dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
 
@@ -26,51 +27,53 @@
         android:fontFamily="@font/apple_sd_gothic_neo_sb"
         android:textSize="14sp"
         android:textColor="#ababab"
+        android:layout_marginTop="5dp"
         tools:text="랜덤에 내 발길을 맡겨볼까?\n새로운 장소를 발견하고 탐험해봐!"
-        app:layout_constraintStart_toStartOf="@id/home_start_iv"
+        app:layout_constraintStart_toStartOf="@id/home_title_tv"
         app:layout_constraintTop_toBottomOf="@id/home_title_tv"
-        app:layout_constraintBottom_toTopOf="@id/home_start_iv"
-        app:layout_constraintVertical_bias="0.02"
+        app:layout_constraintVertical_bias="0"
         />
 
     <ImageView
         android:id="@+id/home_dice_01_iv"
-        android:layout_width="125.11dp"
-        android:layout_height="141.5dp"
-        android:scaleType="fitXY"
+        android:layout_width="120dp"
+        android:layout_height="140dp"
         android:src="@drawable/home_dice_02"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_info_tv"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintVertical_bias="0.85" />
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintVertical_bias="0.73" />
 
     <ImageView
         android:id="@+id/home_start_iv"
-        android:layout_width="229.48dp"
-        android:layout_height="254.63dp"
-        android:scaleType="fitXY"
+        android:layout_width="210dp"
+        android:layout_height="243dp"
         android:src="@drawable/home_dice_01"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/home_dice_02_iv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.3"
-        app:layout_constraintVertical_bias="0.6" />
+        android:layout_marginBottom="30dp"
+        app:layout_constraintHorizontal_bias="0.298"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_info_tv"
+        app:layout_constraintVertical_bias="0.624"
+        android:adjustViewBounds="true"
+        />
 
     <ImageView
         android:id="@+id/home_dice_02_iv"
         android:layout_width="71.68dp"
         android:layout_height="79.53dp"
         android:scaleType="fitXY"
-        android:src="@drawable/home_dice_01"
+        android:src="@drawable/home_dice_03"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_start_iv"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintVertical_bias="0.95" />
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintVertical_bias="0.5"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

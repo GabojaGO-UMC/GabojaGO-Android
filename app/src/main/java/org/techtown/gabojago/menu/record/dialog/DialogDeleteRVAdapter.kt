@@ -2,7 +2,6 @@ package org.techtown.gabojago.menu.record.dialog
 
 import android.graphics.Color
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import org.techtown.gabojago.R
@@ -17,6 +16,7 @@ class DialogDeleteRVAdapter(private val folderList: ArrayList<FolderResultList>)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding: ItemRecordFoldernameBinding =
             ItemRecordFoldernameBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        isFolderSelectList.clear()
         for (i in 0 until 31) {
             isFolderSelectList.add(false)
         }

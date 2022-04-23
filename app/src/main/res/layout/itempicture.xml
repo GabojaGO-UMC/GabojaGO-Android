@@ -5,12 +5,22 @@
     android:layout_marginStart="5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_img_cardView"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/camera"
+        app:cardCornerRadius="3dp"
+        android:layout_gravity="center_vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/item_locker_album_cover_img_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/camera" />
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,6 +18,7 @@ class GoagainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentGoagainBinding.inflate(inflater, container, false)
+        val cin = "dkdkkdkd"
 
         return binding.root
     }

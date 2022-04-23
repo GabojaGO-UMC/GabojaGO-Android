@@ -23,12 +23,11 @@
 
     <TextView
         android:id="@+id/item_date_tv"
-        android:layout_width="30dp"
+        android:layout_width="38dp"
         android:layout_height="wrap_content"
         app:layout_constraintHorizontal_weight="1"
         android:fontFamily="@font/apple_sd_gothic_neo_sb"
         android:gravity="center"
-        android:layout_marginTop="17dp"
         android:text="10"
         android:textColor="@color/black"
         android:textSize="18sp"

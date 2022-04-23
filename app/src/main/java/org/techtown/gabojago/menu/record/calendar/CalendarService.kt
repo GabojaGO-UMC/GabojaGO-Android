@@ -21,15 +21,18 @@ class CalendarService {
         val calendarService = getRetrofit().create(CalendarRetrofitInterface::class.java)
         calendarService.getNicknameAdventure(userJwt).enqueue(object : Callback<NicknameAdventureResponse> {
             override fun onResponse(call: Call<NicknameAdventureResponse>, response: Response<NicknameAdventureResponse>) {
-                Log.d("NICKNAMEAD/Response", response.toString())
-                val resp = response.body()!!
-                Log.d("NICKNAMEAD/Code", resp.code.toString())
+                if (response.body() == null) {
+                    nicknameAdventureView.onNicknameAdventureFailure(0, "네트워크 연결에 실패하였습니다.")
+                } else {
+                    Log.d("NICKNAMEAD/Response", response.toString())
+                    val resp = response.body()!!
+                    Log.d("NICKNAMEAD/Code", resp.code.toString())
 
-                if(resp.isSuccess){
-                    nicknameAdventureView.onNicknameAdventureSuccess(resp.result!!)
-                }
-                else {
-                    nicknameAdventureView.onNicknameAdventureFailure(resp.code, resp.message)
+                    if (resp.isSuccess) {
+                        nicknameAdventureView.onNicknameAdventureSuccess(resp.result!!)
+                    } else {
+                        nicknameAdventureView.onNicknameAdventureFailure(resp.code, resp.message)
+                    }
                 }
             }
             override fun onFailure(call: Call<NicknameAdventureResponse>, t: Throwable) {
@@ -40,23 +43,32 @@ class CalendarService {
 
     fun getAdventureTime(userJwt: String, yearMonth: String) {
         val calendarService = getRetrofit().create(CalendarRetrofitInterface::class.java)
+        adventureTimeView.onAdventureTimeLoading()
         calendarService.getAdventureTime(userJwt, yearMonth).enqueue(object : Callback<AdventureTimeResponse> {
             override fun onResponse(call: Call<AdventureTimeResponse>, response: Response<AdventureTimeResponse>) {
-                Log.d("TIME/Response", response.toString())
-                val resp = response.body()!!
-                Log.d("TIME/Code", resp.code.toString())
-
-                if(resp.isSuccess){
-                    adventureTimeView.onAdventureTimeSuccess(resp.result!!)
-                }
-                else {
-                    when(resp.code){
-                        2012 -> adventureTimeView.onAdventureTimeFailure(resp.code, "회원 정보가 잘못되었습니다.")
-                        2000 -> adventureTimeView.onAdventureTimeFailure(resp.code, resp.message)
-                        3000 -> adventureTimeView.onAdventureTimeFailure(resp.code, resp.message)
-                        5007 -> adventureTimeView.onAdventureTimeFailure(resp.code, resp.message)
-                        2013 -> adventureTimeView.onAdventureTimeFailure(resp.code, resp.message)
-                        5003 -> adventureTimeView.onAdventureTimeFailure(resp.code, resp.message)
+                if (response.body() == null) {
+                    adventureTimeView.onAdventureTimeFailure(0, "네트워크 연결에 실패하였습니다.")
+                } else {
+                    Log.d("TIME/Response", response.toString())
+                    val resp = response.body()!!
+                    Log.d("TIME/Code", resp.code.toString())
+                    if (resp.isSuccess) {
+                        adventureTimeView.onAdventureTimeSuccess(resp.result!!)
+                    } else {
+                        when (resp.code) {
+                            2012 -> adventureTimeView.onAdventureTimeFailure(resp.code,
+                                "회원 정보가 잘못되었습니다.")
+                            2000 -> adventureTimeView.onAdventureTimeFailure(resp.code,
+                                resp.message)
+                            3000 -> adventureTimeView.onAdventureTimeFailure(resp.code,
+                                resp.message)
+                            5007 -> adventureTimeView.onAdventureTimeFailure(resp.code,
+                                resp.message)
+                            2013 -> adventureTimeView.onAdventureTimeFailure(resp.code,
+                                resp.message)
+                            5003 -> adventureTimeView.onAdventureTimeFailure(resp.code,
+                                resp.message)
+                        }
                     }
                 }
             }

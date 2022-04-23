@@ -6,9 +6,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import androidx.fragment.app.DialogFragment
 
 import org.techtown.gabojago.databinding.DialogFolderdeleteBinding
+import org.techtown.gabojago.databinding.FragmentRecordBinding
 import org.techtown.gabojago.main.MainActivity
 import org.techtown.gabojago.menu.record.recordRetrofit.FolderResultList
 import org.techtown.gabojago.menu.record.recordRetrofit.SingleResultListResult
@@ -21,6 +23,7 @@ class DialogFolderDelete(private val recordList: ArrayList<SingleResultListResul
         isCancelable = true
     }
     private lateinit var binding: DialogFolderdeleteBinding
+    private lateinit var binding2: FragmentRecordBinding
 
 
 
@@ -30,7 +33,10 @@ class DialogFolderDelete(private val recordList: ArrayList<SingleResultListResul
         savedInstanceState: Bundle?
     ): View? {
         binding = DialogFolderdeleteBinding.inflate(inflater, container, false)
+        binding2 = FragmentRecordBinding.inflate(inflater,container,false)
+        binding2.recordBlurView.visibility = View.VISIBLE
         dialog?.getWindow()?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
 
         val dialogDeleteRVAdapter = DialogDeleteRVAdapter(folderList)
         binding.dialogFolderdeleteRecyclerview.adapter = dialogDeleteRVAdapter
@@ -38,8 +44,18 @@ class DialogFolderDelete(private val recordList: ArrayList<SingleResultListResul
         val dialogSingleDeleteRVAdapter = DialogDeleteSingleRVAdapter(recordList)
         binding.dialogDeleteRecyclerview.adapter = dialogSingleDeleteRVAdapter
 
+        if(dialogDeleteRVAdapter.itemCount>0&& dialogSingleDeleteRVAdapter.itemCount>0){
+            binding.dialogDivisionView.visibility = View.VISIBLE
+        }
+
         binding.dialogDeleteBtn.setOnClickListener{
             DialogRealDelete(recordList,folderList).show((context as MainActivity).supportFragmentManager,"dialog")
+            binding2.recordBlurView.visibility = View.GONE
+            dismiss()
+        }
+
+        binding.dialogDeleteCancleIv.setOnClickListener{
+            binding2.recordBlurView.visibility = View.GONE
             dismiss()
         }
 

@@ -18,6 +18,7 @@ class DialogDeleteSingleRVAdapter(private val recordList: ArrayList<SingleResult
         val binding: ItemRecordResultBinding =
             ItemRecordResultBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
+        isSingleSelectList.clear()
         for (i in 0 until 31) {
             isSingleSelectList.add(false)
         }

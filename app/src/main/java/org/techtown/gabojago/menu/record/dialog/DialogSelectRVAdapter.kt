@@ -18,6 +18,7 @@ class DialogSelectRVAdapter(private val recordList: ArrayList<SingleResultListRe
         val binding: ItemRecordResultBinding =
             ItemRecordResultBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
+        isSelectList.clear()
         for (i in 0 until 31) {
             isSelectList.add(false)
         }

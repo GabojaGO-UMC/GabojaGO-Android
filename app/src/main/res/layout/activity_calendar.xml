@@ -5,6 +5,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <ImageView
+        android:id="@+id/record_look_back_btn"
+        android:layout_width="40dp"
+        android:layout_height="26dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/calendar_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <TextView
         android:id="@+id/calendar_preview_tv"
         android:layout_width="50dp"
@@ -30,7 +40,7 @@
         android:textColor="#000000"
         android:gravity="center_horizontal"
         android:text="2021, 12월"
-        android:layout_marginTop="87dp"
+        android:layout_marginTop="70dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -50,6 +60,15 @@
         app:layout_constraintTop_toTopOf="@id/calendar_date_tv"
         app:layout_constraintBottom_toBottomOf="@id/calendar_date_tv"/>
 
+    <View
+        android:id="@+id/calendar_empty1"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        app:layout_constraintTop_toBottomOf="@id/calendar_date_tv"
+        app:layout_constraintBottom_toTopOf="@id/calendar_name_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
     <TextView
         android:id="@+id/calendar_name_tv"
         android:layout_width="124dp"
@@ -59,8 +78,16 @@
         android:textColor="#80000000"
         android:gravity="center_horizontal"
         android:text="케융 님의 모험"
-        android:layout_marginTop="65dp"
-        app:layout_constraintTop_toBottomOf="@id/calendar_date_tv"
+        app:layout_constraintTop_toBottomOf="@id/calendar_empty1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <View
+        android:id="@+id/calendar_empty3"
+        android:layout_width="match_parent"
+        android:layout_height="14dp"
+        app:layout_constraintTop_toBottomOf="@id/calendar_name_tv"
+        app:layout_constraintBottom_toTopOf="@id/calendar_total_tv"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -74,8 +101,7 @@
         android:textColor="#8e8e8e"
         android:gravity="center"
         android:text="총       회"
-        android:layout_marginTop="14dp"
-        app:layout_constraintTop_toBottomOf="@id/calendar_name_tv"
+        app:layout_constraintTop_toBottomOf="@id/calendar_empty3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -96,15 +122,15 @@
 
     <ImageView
         android:id="@+id/calendar_calendar_iv"
-        android:layout_width="0dp"
-        android:layout_height="360dp"
+        android:layout_width="320dp"
+        android:layout_height="0dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:background="@drawable/calendar_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/calendar_total_number_tv"
-        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
     
     <LinearLayout
@@ -217,13 +243,27 @@
         app:layout_constraintTop_toBottomOf="@id/calendar_week_layout"
         tools:listitem="@layout/item_calendar_gridview" />
 
+    <com.github.mmin18.widget.RealtimeBlurView
+        android:id="@+id/calendar_blur_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationZ="3dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:realtimeBlurRadius="10dp"
+        app:realtimeOverlayColor="#00000000" />
+
     <ProgressBar
         android:id="@+id/calendar_loading_pb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:indeterminateTint="#797979"
+        android:indeterminateTint="#ff6745"
         android:visibility="gone"
+        android:translationZ="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

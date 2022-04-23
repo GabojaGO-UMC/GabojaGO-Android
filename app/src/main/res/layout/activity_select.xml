@@ -59,7 +59,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:background="#23354f" />
+            android:background="@drawable/select_comp_btn" />
 
         <TextView
             android:layout_width="wrap_content"

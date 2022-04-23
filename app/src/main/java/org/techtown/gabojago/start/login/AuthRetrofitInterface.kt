@@ -8,4 +8,9 @@ interface AuthRetrofitInterface {
     fun login(
         @Body access_token: AuthRequest
     ): Call<AuthResponse>
+
+    @GET("/app/user/autologin")
+    fun remainLogin(
+        @Header("x-access-token") xAccessToken: String
+    ): Call<AuthRemainResponse>
 }

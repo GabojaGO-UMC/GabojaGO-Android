@@ -40,6 +40,14 @@ interface RecordRetrofitInterface {
         @Body folderRecording : FolderRecordingRequest
     ): Call<FolderRecordResponse>
 
+    //개별기록하기
+    @POST("/app/eachrecording/{randomResultIdx}")
+    fun putSingleRecord(
+        @Header("x-access-token") xAccessToken: String,
+        @Path("randomResultIdx") randomResultIdx: Int,
+        @Body singleRecording : SingleRecordingRequest
+    ): Call<SingleRecordResponse>
+
 
     //폴더기록조회
     @GET("/app/recording/folder/{folderIdx}")
@@ -48,6 +56,14 @@ interface RecordRetrofitInterface {
         @Path("folderIdx") folderIdx: Int
     ): Call<FolderLookResponse>
 
+    //개별기록조회
+    @GET("/app/recording/eachContent/{randomResultIdx}")
+    fun getSingleLook(
+        @Header("x-access-token") xAccessToken: String,
+        @Path("randomResultIdx") randomResultIdx: Int
+    ): Call<SingleLookResponse>
+
+    //폴더 삭제
     @HTTP(method = "DELETE", path = "/app/randomResult", hasBody = true)
     fun putIdx(
         @Header("x-access-token") xAccessToken: String,
@@ -61,11 +77,42 @@ interface RecordRetrofitInterface {
         @Body folderUpdate : FolderUpdateRequest
     ): Call<FolderUpdateResponse>
 
+    //폴더해체
     @DELETE("/app/folder/delete/{folderIdx}")
     fun putBreakFolderIdx(
         @Header("x-access-token") xAccessToken: String,
         @Path("folderIdx") folderIdx: Int
     ): Call<FolderBreakResponse>
+
+    //폴더기록수정
+    @PATCH("/app/recording/folderCorrection/{folderIdx}")
+    fun putFolderModify(
+        @Header("x-access-token") xAccessToken: String,
+        @Body folderModify : FolderModifyRequest,
+        @Path("folderIdx") folderIdx: Int
+    ): Call<FolderModifyResponse>
+
+    //개별기록수정
+    @PATCH("/app/recording/eachCorrection/{randomResultIdx}")
+    fun putSingleModify(
+        @Header("x-access-token") xAccessToken: String,
+        @Body singleModify : SingleModifyRequest,
+        @Path("randomResultIdx") randomResultIdx: Int
+    ): Call<SingleModifyResponse>
+
+    //기록하기프래그먼트 내 기록삭제(폴더)
+    @PATCH("/app/recording/folderrecorddeletion/{folderIdx}")
+    fun putFolderDelete(
+        @Header("x-access-token") xAccessToken: String,
+        @Path("folderIdx") folderIdx: Int
+    ): Call<FolderrecordingDeleteResponse>
+
+    //기록하기프래그먼트 내 기록삭제(개별)
+    @PATCH("/app/recording/eachrecorddeletion/{randomResultIdx}")
+    fun putSingleDelete(
+        @Header("x-access-token") xAccessToken: String,
+        @Path("randomResultIdx") randomResultIdx: Int
+    ): Call<SinglerecordingDeleteResponse>
 
 
 }

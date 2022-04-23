@@ -13,7 +13,7 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Gabojago">
 
-        <activity android:name=".start.SplashActivity"
+        <activity android:name=".start.splash.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

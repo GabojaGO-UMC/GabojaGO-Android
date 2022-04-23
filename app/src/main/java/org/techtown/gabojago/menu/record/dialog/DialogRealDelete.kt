@@ -7,18 +7,15 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.PopupMenu
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
-import kotlinx.android.synthetic.main.dialog_folderdelete.*
 import org.techtown.gabojago.R
 import org.techtown.gabojago.databinding.DialogRealdeleteBinding
+import org.techtown.gabojago.databinding.FragmentRecordBinding
 import org.techtown.gabojago.main.MainActivity
+import org.techtown.gabojago.main.MyToast
 import org.techtown.gabojago.main.getJwt
-import org.techtown.gabojago.menu.randomPick.home.HomeFragment
 import org.techtown.gabojago.menu.record.RecordFragment
 import org.techtown.gabojago.menu.record.recordRetrofit.FolderDeleteView
 import org.techtown.gabojago.menu.record.recordRetrofit.FolderResultList
@@ -35,6 +32,7 @@ class DialogRealDelete(private val recordList: ArrayList<SingleResultListResult>
     }
 
     private lateinit var binding: DialogRealdeleteBinding
+    private lateinit var binding2: FragmentRecordBinding
 
     val folderDelete= mutableListOf<Int>()
     val resultDelete= mutableListOf<Int>()
@@ -45,6 +43,7 @@ class DialogRealDelete(private val recordList: ArrayList<SingleResultListResult>
         savedInstanceState: Bundle?
     ): View? {
         binding = DialogRealdeleteBinding.inflate(inflater, container, false)
+        binding2 = FragmentRecordBinding.inflate(inflater,container,false)
         dialog?.getWindow()?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         val recordService = RecordService()
@@ -53,18 +52,22 @@ class DialogRealDelete(private val recordList: ArrayList<SingleResultListResult>
         binding.dialogYesBtn.setOnClickListener {
             val userJwt = getJwt(requireContext(), "userJwt")
 
-            for (i in 0 until (isFolderSelectList.size-1)) {
+            for (i in 0 until (isFolderSelectList.size)) {
                 if(isFolderSelectList[i]!=null) {
                     if (isFolderSelectList[i]) {
-                        folderDelete.add(folderList[i].folderIdx)
+                        if (!folderList.isEmpty()) {
+                            folderDelete.add(folderList[i].folderIdx)
+                        }
                     }
                 }
             }
 
-            for (i in 0 until (isSingleSelectList.size-1)) {
+            for (i in 0 until (isSingleSelectList.size)) {
                 if(isSingleSelectList[i]!=null) {
                     if (isSingleSelectList[i]) {
-                        resultDelete.add(recordList[i].randomResultListResult.randomResultIdx)
+                        if(!recordList.isEmpty()) {
+                            resultDelete.add(recordList[i].randomResultListResult.randomResultIdx)
+                        }
                     }
                 }
             }
@@ -73,6 +76,7 @@ class DialogRealDelete(private val recordList: ArrayList<SingleResultListResult>
         }
 
         binding.dialogNoBtn.setOnClickListener {
+            binding2.recordBlurView.visibility = View.GONE
             dismiss()
         }
         return binding.root
@@ -84,13 +88,15 @@ class DialogRealDelete(private val recordList: ArrayList<SingleResultListResult>
             .replace(R.id.main_frm, RecordFragment())
             .commitAllowingStateLoss()
         Log.e("성공","성공")
+        binding2.recordBlurView.visibility = View.GONE
         dismiss()
     }
 
     override fun onFolderDeleteFailure(code: Int, message: String) {
-        Toast.makeText(
-            activity, message, Toast.LENGTH_SHORT
+        MyToast.createToast(
+            requireContext(), message, 90, true
         ).show()
+        binding2.recordBlurView.visibility = View.GONE
         dismiss()
     }
 }

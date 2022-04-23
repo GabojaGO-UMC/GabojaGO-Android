@@ -24,7 +24,7 @@ class RecordLookRVAdapter(private val pickedList: ArrayList<FolderRecordResultLi
         RecyclerView.ViewHolder(binding.root) {
         fun bind(pickedItem: FolderRecordResultList) {
             binding.resultPickTimeTv.text = pickedItem.creatAt
-            binding.resultPickContentsTv.text = pickedItem.randomResultContent
+            binding.resultPickContentsTv.text = " \""+pickedItem.randomResultContent+"\""
             when (pickedItem.randomResultType) {
                 0 -> {
                     binding.resultPickTypeTv.text = ""

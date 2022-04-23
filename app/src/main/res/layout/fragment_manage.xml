@@ -13,28 +13,28 @@
 
         <ImageView
             android:id="@+id/manage_icon_iv"
-            android:layout_width="42dp"
-            android:layout_height="42dp"
-            android:src="@drawable/person_orange"
-            android:layout_marginStart="21dp"
-            android:scaleType="fitXY"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:src="@drawable/person_orange2"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="60dp"
+            android:scaleType="fitCenter"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/record_title_tv"
-            app:layout_constraintBottom_toBottomOf="@id/record_title_tv"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/record_title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/apple_sd_gothic_neo_sb"
+            android:fontFamily="@font/nanum_square_round_extrabold"
             android:textStyle="bold"
             android:textSize="32.3sp"
             android:textColor="#000000"
-            android:layout_marginTop="60dp"
             android:text="관리하자"
             android:layout_marginStart="8dp"
             app:layout_constraintStart_toEndOf="@id/manage_icon_iv"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@id/manage_icon_iv"
+            app:layout_constraintBottom_toBottomOf="@id/manage_icon_iv"
             />
 
         <TextView
@@ -267,41 +267,30 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/manage_loading_view"
+    <com.github.mmin18.widget.RealtimeBlurView
+        android:id="@+id/manage_blur_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#66000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:translationZ="3dp"
         android:visibility="gone"
-        >
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/manage_loading_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="저장 중"
-            android:textSize="18sp"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:fontFamily="@font/apple_sd_gothic_neo_sb"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/manage_loading_iv"
-            android:layout_width="39dp"
-            android:layout_height="11dp"
-            android:src="@drawable/loading_01"
-            android:layout_marginBottom="5dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/manage_loading_tv"
-            />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:realtimeBlurRadius="10dp"
+        app:realtimeOverlayColor="#00000000" />
+
+    <ProgressBar
+        android:id="@+id/manage_loading_pb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:indeterminateTint="#ff6745"
+        android:visibility="gone"
+        android:translationZ="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </FrameLayout>

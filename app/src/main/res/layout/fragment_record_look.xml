@@ -15,16 +15,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         >
-        <TextView
+        <ImageView
             android:id="@+id/record_look_back_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="12dp"
+            android:layout_height="18dp"
             android:layout_marginStart="20dp"
-            android:fontFamily="@font/apple_sd_gothic_neo_r"
-            android:text="&lt;"
-            android:textColor="#b0b0b0"
-            android:textSize="32.2sp"
-            android:textStyle="normal"
+            android:src="@drawable/backarrow"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="@id/record_look_title_view"/>
@@ -57,16 +53,17 @@
                 android:id="@+id/record_look_circle_indicator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:dotsColor="#111111"
-                app:dotsStrokeColor="#aaaaaa"
-                app:dotsSize="7dp"
+                app:dotsColor="#23454f"
+                app:dotsStrokeWidth="2.5dp"
+                app:dotsStrokeColor="#c4c4c4"
+                app:dotsSize="5dp"
                 app:dotsCornerRadius="5dp"
                 app:dotsClickable="true"
                 android:layout_marginTop="15dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/record_look_picture_vp"
-                />
+                android:visibility="gone"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/record_look_name_tv"
@@ -76,7 +73,7 @@
                 android:textSize="22sp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/apple_sd_gothic_neo_sb"
-                android:textStyle="bold"
+                android:textStyle="normal"
                 android:layout_margin="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -253,26 +250,29 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/record_look_contents_tv"
-                android:layout_width="315dp"
-                android:layout_height="140dp"
-                android:text="Contents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="내용이 비어있어!"
                 android:textSize="13sp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/apple_sd_gothic_neo_r"
-                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="10dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="20dp"
                 android:padding="10dp"
-                android:background="@drawable/record_look_contents"
+                android:background="@drawable/look_box"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/record_look_star_view"
-                />
+                android:visibility="gone"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/record_look_view"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="45dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/record_look_contents_tv"
                 >
@@ -307,6 +307,7 @@
                 android:id="@+id/record_result_recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 tools:listitem="@layout/item_look_pick"
@@ -317,6 +318,39 @@
                 app:layout_constraintTop_toBottomOf="@id/record_look_view"
                 android:visibility="gone"
                 />
+
+            <View
+                android:id="@+id/record_result_emptyview"
+                android:background="@color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/record_result_recyclerview"
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <com.github.mmin18.widget.RealtimeBlurView
+        android:id="@+id/look_record_blur_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:realtimeBlurRadius="10dp"
+        app:realtimeOverlayColor="#00000000" />
+
+    <ProgressBar
+        android:id="@+id/look_record_loading_pb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:indeterminateTint="#ff6745"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

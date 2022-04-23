@@ -5,36 +5,59 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools">
 
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/single_record_title_view"
         android:layout_width="match_parent"
         android:layout_height="90dp"
+        android:translationZ="-1dp"
         android:background="#fafafa"
         android:elevation="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+        <com.github.mmin18.widget.RealtimeBlurView
+            android:id="@+id/single_record_blur_view2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:translationZ="3dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@+id/single_record_title_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:realtimeBlurRadius="10dp"
+            app:realtimeOverlayColor="#00000000" />
 
 
-        <TextView
+        <ImageView
             android:id="@+id/single_record_backarrow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="12dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="55dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="44dp"
-            android:fontFamily="@font/apple_sd_gothic_neo_r"
-            android:text="&lt;"
-            android:textColor="#b0b0b0"
-            android:textSize="32.2sp"
-            android:textStyle="normal"
+            android:src="@drawable/backarrow"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/single_record_trash"
+            android:layout_width="17dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="20dp"
+            android:scaleType="fitXY"
+            app:layout_marginBaseline="2dp"
+            android:src="@drawable/recordingtrash"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/single_record_backarrow" />
+
 
         <TextView
             android:layout_width="192dp"
             android:layout_height="29dp"
-            android:fontFamily="@font/nanum_square_round_otf_extrabold"
-            android:gravity="center_horizontal"
+            android:fontFamily="@font/nanum_square_round_extrabold"
+            android:gravity="center"
             android:text="기록하자"
             android:textColor="#000000"
             android:textSize="20sp"
@@ -54,136 +77,137 @@
         android:overScrollMode="never"
         app:layout_constraintBottom_toTopOf="@id/single_record_complete_view"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/single_record_title_view">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/single_record_result_layout"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="15dp"
-            android:background="@drawable/folderresultbox_orange"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
 
-            <EditText
-                android:id="@+id/single_record_title_et"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23sp"
-                android:layout_marginTop="15dp"
-                android:fontFamily="@font/apple_sd_gothic_neo_sb"
-                android:text="제목을 입력해줘!"
-                android:background="@color/transparent"
-                android:textColor="#FF937C"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/single_record_line_iv"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/single_record_result_layout"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="15dp"
+                android:layout_height="120dp"
                 android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="15dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/line_18"
-                app:layout_constraintStart_toStartOf="parent"
+                android:background="@drawable/folderresultbox_orange"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/single_record_title_et" />
-
-            <ImageView
-                android:id="@+id/single_record_circle_iv"
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/resultimage_dolimpan_gray"
-                android:layout_marginStart="17dp"
-                android:layout_marginBottom="8.5dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/single_record_line_iv" />
+                app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/single_record_title_iv"
-                android:layout_width="wrap_content"
-                android:layout_height="13dp"
-                android:src="@drawable/dolimpan"
-                android:scaleType="fitStart"
-                android:layout_marginStart="11dp"
-                app:layout_constraintStart_toEndOf="@id/single_record_circle_iv"
-                app:layout_constraintTop_toTopOf="@id/single_record_circle_iv"
-                app:layout_constraintBottom_toTopOf="@id/single_record_result_tv"/>
+                <EditText
+                    android:id="@+id/single_record_title_et"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23sp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/transparent"
+                    android:fontFamily="@font/apple_sd_gothic_neo_sb"
+                    android:hint="제목을 입력해줘!"
+                    android:textColor="#FF6745"
+                    android:textColorHint="#FFD7CF"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/single_record_line_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/line_18"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/single_record_title_et" />
+
+                <ImageView
+                    android:id="@+id/single_record_circle_iv"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginBottom="8.5dp"
+                    android:src="@drawable/resultimage_dolimpan_gray"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/single_record_line_iv" />
+
+                <ImageView
+                    android:id="@+id/single_record_title_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="13dp"
+                    android:layout_marginStart="11dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/dolimpan"
+                    app:layout_constraintBottom_toTopOf="@id/single_record_result_tv"
+                    app:layout_constraintStart_toEndOf="@id/single_record_circle_iv"
+                    app:layout_constraintTop_toTopOf="@id/single_record_circle_iv" />
+
+                <TextView
+                    android:id="@+id/single_record_result_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/apple_sd_gothic_neo_sb"
+                    android:text="버스"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/single_record_circle_iv"
+                    app:layout_constraintStart_toStartOf="@id/single_record_title_iv"
+                    app:layout_constraintTop_toBottomOf="@id/single_record_title_iv" />
+
+                <TextView
+                    android:id="@+id/single_record_clock_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="84dp"
+                    android:layout_marginBottom="0.5dp"
+                    android:fontFamily="@font/apple_sd_gothic_neo_sb"
+                    android:gravity="top"
+                    android:text="16:45"
+                    android:textColor="#BFBFBF"
+                    android:textSize="9sp"
+                    app:layout_constraintBottom_toBottomOf="@id/single_record_title_iv"
+                    app:layout_constraintStart_toEndOf="@id/single_record_circle_iv" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
-                android:id="@+id/single_record_result_tv"
+                android:id="@+id/single_record_score_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="45dp"
                 android:fontFamily="@font/apple_sd_gothic_neo_sb"
-                android:textSize="16sp"
-                android:layout_marginTop="3dp"
+                android:gravity="center_horizontal"
+                android:text="오늘의 랜덤은 몇 점?"
                 android:textColor="#000000"
-                android:text="버스"
-                app:layout_constraintStart_toStartOf="@id/single_record_title_iv"
-                app:layout_constraintTop_toBottomOf="@id/single_record_title_iv"
-                app:layout_constraintBottom_toBottomOf="@id/single_record_circle_iv"/>
-
-            <TextView
-                android:id="@+id/single_record_clock_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/apple_sd_gothic_neo_sb"
-                android:textSize="9sp"
-                android:layout_marginStart="84dp"
-                android:textColor="#BFBFBF"
-                android:gravity="top"
-                android:layout_marginBottom="0.5dp"
-                android:text="16:45"
-                app:layout_constraintStart_toEndOf="@id/single_record_circle_iv"
-                app:layout_constraintBottom_toBottomOf="@id/single_record_title_iv"/>
-
-
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <TextView
-            android:id="@+id/single_record_score_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="45dp"
-            android:fontFamily="@font/apple_sd_gothic_neo_sb"
-            android:gravity="center_horizontal"
-            android:text="오늘의 랜덤은 몇 점?"
-            android:textColor="#000000"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/single_record_result_layout" />
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/single_record_result_layout" />
 
             <RatingBar
                 android:id="@+id/single_record_starscore"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_marginStart="-28dp"
-                android:numStars="5"
-                android:rating="2.5"
-                android:stepSize="0.5"
-                android:scaleX="0.5"
-                android:scaleY="0.5"
                 android:foregroundGravity="left"
-                app:layout_constraintStart_toStartOf="parent"
+                android:numStars="5"
                 android:progressBackgroundTint="#EBEBEB"
                 android:progressTint="#ff6745"
-                app:layout_constraintTop_toBottomOf="@id/single_record_score_tv"
-                app:layout_constraintBottom_toTopOf="@id/single_record_picture_tv" />
+                android:rating="2.5"
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                android:secondaryProgressTint="#ff6745"
+                android:stepSize="0.5"
+                app:layout_constraintBottom_toTopOf="@id/single_record_picture_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/single_record_score_tv" />
 
 
             <TextView
@@ -196,7 +220,6 @@
                 android:text="사진 첨부할래?"
                 android:textColor="#000000"
                 android:textSize="12sp"
-                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@id/single_record_score_tv"
                 app:layout_constraintTop_toBottomOf="@id/single_record_starscore" />
 
@@ -209,6 +232,7 @@
                 android:scrollbars="none"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/single_record_picture_tv">
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
@@ -255,83 +279,108 @@
             </HorizontalScrollView>
 
 
-
-        <TextView
-            android:id="@+id/single_record_write_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="27dp"
-            android:fontFamily="@font/apple_sd_gothic_neo_sb"
-            android:gravity="center_horizontal"
-            android:text="너의 발자취를 기록해봐."
-            android:textColor="#000000"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@id/single_record_picture_tv"
-            app:layout_constraintTop_toBottomOf="@id/single_record_horizontalscroll" />
+            <TextView
+                android:id="@+id/single_record_write_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                android:fontFamily="@font/apple_sd_gothic_neo_sb"
+                android:gravity="center_horizontal"
+                android:text="너의 발자취를 기록해봐."
+                android:textColor="#000000"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/single_record_picture_tv"
+                app:layout_constraintTop_toBottomOf="@id/single_record_horizontalscroll" />
 
 
             <EditText
                 android:id="@+id/single_record_write_et"
                 android:layout_width="0dp"
                 android:layout_height="210dp"
-                android:fontFamily="@font/apple_sd_gothic_neo_sb"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="32dp"
-                android:padding="13dp"
-                android:background="@drawable/rectangle_32"
-                android:textSize="13sp"
-                android:textColor="#000000"
+                android:background="@drawable/recordingback"
+                android:fontFamily="@font/apple_sd_gothic_neo_r"
+                android:lineSpacingExtra="10dp"
                 android:gravity="clip_vertical"
+                android:hint="기록해봐!"
                 android:maxLength="1000"
-                android:hint="기록해보세요"
+                android:padding="12dp"
+                android:scrollbarSize="2dp"
+                android:scrollbars="vertical"
+                android:textColor="#000000"
+                android:textColorHint="#D5D5D5"
+                android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/single_record_write_tv"/>
+                app:layout_constraintTop_toBottomOf="@id/single_record_write_tv" />
 
-        <TextView
-            android:id="@+id/single_record_charactersnum_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="13dp"
-            android:layout_marginBottom="13dp"
-            android:fontFamily="@font/apple_sd_gothic_neo_sb"
-            android:gravity="center_horizontal"
-            android:text="0/1000"
-            android:textColor="#a6000000"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/single_record_write_et"
-            app:layout_constraintEnd_toEndOf="@id/single_record_write_et" />
+            <TextView
+                android:id="@+id/single_record_charactersnum_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="3dp"
+                android:fontFamily="@font/apple_sd_gothic_neo_r"
+                android:gravity="center_horizontal"
+                android:text="0/1000"
+                android:textColor="#939393"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/single_record_write_et"
+                app:layout_constraintTop_toBottomOf="@id/single_record_write_et" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <View
+    <ImageView
         android:id="@+id/single_record_complete_view"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:background="#23354F"
+        android:scaleType="fitXY"
+        android:src="@drawable/recordingcomplete"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/single_record_scrollview" />
 
     <TextView
+        android:id="@+id/single_record_complete_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/apple_sd_gothic_neo_sb"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:textColor="#ffffff"
         android:gravity="center_horizontal"
+        android:letterSpacing="0.05"
         android:text="완료"
+        android:textColor="#ffffff"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="@id/single_record_complete_view"
         app:layout_constraintEnd_toEndOf="@id/single_record_complete_view"
         app:layout_constraintTop_toTopOf="@id/single_record_complete_view"
         app:layout_constraintBottom_toBottomOf="@id/single_record_complete_view"/>
 
+    <com.github.mmin18.widget.RealtimeBlurView
+        android:id="@+id/single_record_blur_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@+id/single_record_title_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:realtimeBlurRadius="10dp"
+        app:realtimeOverlayColor="#00000000" />
+
+    <ProgressBar
+        android:id="@+id/single_record_loading_pb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:indeterminateTint="#ff6745"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 

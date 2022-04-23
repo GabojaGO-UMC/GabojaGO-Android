@@ -20,6 +20,8 @@
         android:textStyle="bold"
         android:gravity="center"
         android:layout_margin="5dp"
+        android:textSelectHandle="@color/primary_03"
+        android:textCursorDrawable="@color/primary_03"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

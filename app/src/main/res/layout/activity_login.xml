@@ -6,24 +6,35 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="#FF654E"
+        android:layout_height="100dp"
+        android:background="@color/ic_go_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/login_background_iv"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/login_background_view"
         android:layout_width="match_parent"
         android:layout_height="490dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/login_background"
+        android:background="@drawable/login_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:visibility="invisible"
-        />
+        >
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/login_background_logo_iv"
+            android:layout_width="127dp"
+            android:layout_height="131dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/login_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.8"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/login_title_tv"
@@ -33,10 +44,10 @@
        android:textSize="18sp"
         android:textColor="#000000"
         android:fontFamily="@font/apple_sd_gothic_neo_r"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login_background_iv"
+        app:layout_constraintTop_toBottomOf="@id/login_background_view"
         />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -56,8 +67,10 @@
 
     <com.nhn.android.naverlogin.ui.view.OAuthLoginButton
         android:id="@+id/login_naver_btn"
-        android:layout_width="290dp"
-        android:layout_height="57.6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="57dp"
+        android:src="@drawable/naver_button"
+        android:adjustViewBounds="true"
         app:layout_constraintTop_toBottomOf="@id/login_title_02_tv"
         app:layout_constraintBottom_toTopOf="@id/login_info_tv"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +82,8 @@
         android:id="@+id/login_cb"
         android:layout_width="16dp"
         android:layout_height="16dp"
-        android:layout_margin="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
         android:button="@null"
         android:background="@drawable/login_checkbox"
         app:layout_constraintStart_toStartOf="@id/login_naver_btn"
